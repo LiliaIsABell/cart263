@@ -18,7 +18,6 @@ window.onload = setup;
 // function set up
 //
 function setup() {
-  console.log("BLOOP!")
 
   // loop allows to create a black background
   // made of pixels
