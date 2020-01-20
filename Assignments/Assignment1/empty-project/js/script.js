@@ -10,11 +10,16 @@ to match your project! Write JavaScript to do amazing things below!
 
 *********************************************************************/
 
-
-// let rotation = 0;
+// Global variable for rotation
+let rotation = 0;
 
 // Window onload allows to set up a "canvas"
 window.onload = setup;
+
+// document.addEventListener() makes it that
+// "keydown" actually works and is related
+// to function rotate()
+document.addEventListener("keydown", rotate);
 
 
 // function set up
@@ -36,11 +41,10 @@ function setup() {
     // when the mouse hovers
     pixel.addEventListener("mouseover", paint);
 
-
-    // pixel.addEventListener("keydown", rotate);
-
   }
 }
+
+
 // function paint
 //
 function paint(e) {
@@ -57,18 +61,41 @@ function paint(e) {
   // The pixels will disseappear after approx. 1000 milliseconds
   setTimeout(resetPixel, 1000, pixel);
 }
+
+
 // function resetPixel
 //
 function resetPixel(pixel) {
   // The reseted pixels will turn black
   pixel.style.backgroundColor = 'black';
 }
-// // function rotate
-// //
-// function rotate(e) {
-//   if (e.keyCode === 39) {
-//     let pixel = e.target;
-//     let tilt = rotate(style.transform);
-//     tilt += 1;
-//     e.target.style.transform = `${tilt}px`;
-//   }
+
+
+// function rotate
+//
+function rotate(e) {
+  // document.getElementsByClassName() takes all
+  // of the pixel divs and apply them to the if
+  // statement
+  let pixels = document.getElementsByClassName("pixel");
+  // When the right arrow is pressed
+  if (e.keyCode === 39) {
+    // all the pixels
+    for (let i = 0; i < 1000; i++) {
+      let pixel = pixels[i];
+      // Will rotate 1 degre towards the right
+      pixel.style.transform = `rotate(${rotation}deg`;
+    }
+    rotation += 1;
+  }
+  // When the left arrow is pressed
+  else if (e.keyCode === 37) {
+    // all the pixels
+    for (let i = 0; i < 1000; i++) {
+      let pixel = pixels[i];
+      // Will rotate 1 degre towards the left
+      pixel.style.transform = `rotate(${rotation}deg)`;
+    }
+    rotation -= 1;
+  }
+}

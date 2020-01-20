@@ -6,5 +6,5 @@ that make up the black background*/
   width: 30px;
   height: 30px;
   float: left;
-  /* transform: rotate(0deg); */
+  transform: rotate(0deg);
 }
