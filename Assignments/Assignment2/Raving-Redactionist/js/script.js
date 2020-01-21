@@ -2,7 +2,7 @@
 
 /********************************************************************
 
-Raving Redactionist
+Raving Redactionist Redux
 Lilia Isabel Aguirre Lugo
 
 This is a template. Fill in the title, author, and this description
