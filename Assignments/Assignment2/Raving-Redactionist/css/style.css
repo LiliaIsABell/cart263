@@ -1,0 +1,10 @@
+/* redacted appearance */
+.redacted{
+  background-color: black;
+  color: transparent;
+}
+/* revealed appearance */
+.revealed {
+  background-color: transparent;
+  color: red;
+}
