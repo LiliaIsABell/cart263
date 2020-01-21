@@ -1,3 +1,11 @@
+/* paragraphe appearance */
+p{
+  font-size: 20px;
+  text-indent: 30px;
+  margin: 20px;
+  margin-top: 80px;
+}
+
 /* redacted appearance */
 .redacted{
   background-color: black;
