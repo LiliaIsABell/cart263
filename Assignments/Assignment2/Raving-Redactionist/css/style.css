@@ -5,6 +5,12 @@ p{
   margin: 20px;
   margin-top: 80px;
 }
+p2{
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-left: 1200px;
+  
+}
 
 /* redacted appearance */
 .redacted{
