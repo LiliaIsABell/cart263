@@ -1,22 +1,27 @@
 /* paragraphe appearance */
-p{
+p {
   font-size: 20px;
   text-indent: 30px;
   margin: 20px;
   margin-top: 80px;
 }
-p2{
+
+p2 {
   font-size: 25px;
   margin-bottom: 10px;
   margin-left: 1200px;
-  
 }
 
 /* redacted appearance */
-.redacted{
+.redacted {
   background-color: black;
   color: transparent;
 }
+/*found appearance*/
+.found {
+  background-color: rgb(255, 0, 196, 100);
+}
+
 /* revealed appearance */
 .revealed {
   background-color: transparent;
