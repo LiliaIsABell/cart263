@@ -12,28 +12,49 @@ to match your project! Write JavaScript to do amazing things below!
 // Start the program
 $(document).ready(setup);
 
-// Variables
+
+// Constants
 const INTERVAL_LENGHT = 500;
 const PERCENTAGE = 0.1;
-let $spans;
+// Spans
+let $redacted;
+let $secret;
+// Secrets Status
+let secretFound;
+let secretsTotal;
 
 // Setup
 //
 function setup() {
-  // Variable
-  $spans = $('span');
+  // Variables
+  $redacted = $('.redacted');
+  $secret = $('.secret');
+
+  // .length allows to determine the
+  // total amount of secrets present
+  secretsTotal = $secret.length;
+
+  // .text() allows to collect all the
+  // information and put it in $secret
+  $secret.text();
+
   // Set time interval that updates the spans
   setInterval(update, INTERVAL_LENGHT);
+
   // Set .on() function to make the
   // clicking effect function
-  $spans.on('click', spanClicked);
+  $redacted.on('click', spanClicked);
 
+  // Set .on() function to make the
+  // mouseover effect function
+  $secret.on('mouseover', mouseOver)
 }
+
 // Update
 //
 function update() {
-  // All the spans will be updated
-  $spans.each(updateSpan);
+  // The class 'redacted' will be updated
+  $redacted.each(updateSpan);
 }
 
 // Update Span
@@ -56,4 +77,13 @@ function spanClicked() {
   // the text gets redacted
   $(this).addClass("redacted");
   $(this).removeClass("revealed");
+}
+
+// mouseOver
+//
+function mouseOver() {
+  // When the mouse hovers over the
+  // secret words, the words will be
+  // highlighted 
+  $(this).addClass("found");
 }
