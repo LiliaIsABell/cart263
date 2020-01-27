@@ -19,8 +19,9 @@ const PERCENTAGE = 0.1;
 // Spans
 let $redacted;
 let $secret;
+let $found = 0;
 // Secrets Status
-let secretFound;
+let secretsFound;
 let secretsTotal;
 
 // Setup
@@ -29,7 +30,8 @@ function setup() {
   // Variables
   $redacted = $('.redacted');
   $secret = $('.secret');
-
+  // This displays the secrets found
+  secretsFound = $('#secretsFound')
   // .length allows to determine the
   // total amount of secrets present
   secretsTotal = $secret.length;
@@ -55,6 +57,9 @@ function setup() {
 function update() {
   // The class 'redacted' will be updated
   $redacted.each(updateSpan);
+  // Each time a secret is found,
+  // the score will update
+  secretsFound.text($found);
 }
 
 // Update Span
@@ -84,6 +89,9 @@ function spanClicked() {
 function mouseOver() {
   // When the mouse hovers over the
   // secret words, the words will be
-  // highlighted 
-  $(this).addClass("found");
+  // highlighted
+  if ($(this).addClass("found").off()) {
+    // They are counted for the score
+    $found += 1;
+  }
 }
