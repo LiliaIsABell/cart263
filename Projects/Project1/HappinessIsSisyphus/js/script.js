@@ -71,6 +71,36 @@ function setup() {
   // This allows the ghost to reset
   $ghosts.each(resetGhost);
 
+  // This is the message that is presented
+  // in the begining
+  startMessage();
+
+}
+
+// Start message
+//
+function startMessage() {
+  $("#dialog1").dialog({
+    modal: true,
+    buttons: {
+      Ok: function() {
+        $(this).dialog("close");
+      }
+    }
+  });
+}
+
+// Escaped ghost dialog
+//
+function escapedGhostDialog() {
+  $("#dialog2").dialog({
+    modal: true,
+    buttons: {
+      Ok: function() {
+        $(this).dialog("close");
+      }
+    }
+  });
 }
 
 // Ghost Collected
@@ -91,6 +121,10 @@ function ghostCollected(event, ui) {
   // everything will reset
   if (currentSquare === 7) {
     reset();
+    // This dialogue box will appear
+    // each time everything resets
+    escapedGhostDialog();
+
   }
 }
 
@@ -106,7 +140,7 @@ function reset() {
     // Bring back the ghost at the begining of the body
     $("body").prepend('<img class="' + ghostNum + ' ghost" src="assets/images/ghost.png" alt="ghost" height="120"></img>');
   }
-
+  // Random ghost positioning
   $(".ghost").each(function(index, singleGhost) {
     $(singleGhost).draggable();
     $(singleGhost).css("position", "absolute");
@@ -114,7 +148,6 @@ function reset() {
     let topPos = Math.random() * 500 + 20;
     $(singleGhost).css("left", leftPos + "px");
     $(singleGhost).css("top", topPos + "px");
-    // console.log(singleGhost);
   })
 }
 

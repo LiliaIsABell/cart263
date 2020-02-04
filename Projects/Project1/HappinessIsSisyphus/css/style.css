@@ -2,6 +2,11 @@ body {
   background-color: rgb(170, 32, 255);
 }
 
+/* .background {
+  position: absolute;
+  z-index: -1;
+} */
+
 .square1 {
   background-color: white;
   width: 100px;
