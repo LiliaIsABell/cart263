@@ -1,11 +1,9 @@
-body {
-  background-color: rgb(170, 32, 255);
-}
-
-/* .background {
+.background {
+  top: 0px;
+  left: 0px;
   position: absolute;
   z-index: -1;
-} */
+}
 
 .square1 {
   background-color: white;
@@ -66,6 +64,7 @@ body {
 /* The ghosts have an animation
 that makes them fade in and out */
 .ghost1 {
+  color: red;
   opacity: 0.2;
   animation-name: peekaboo;
   animation-duration: 4s;
@@ -145,7 +144,7 @@ that makes them fade in and out */
 }
 
 .collected {
-  background-color: black;
+  background-color: #00cc33;
   width: 100px;
   height: 80px;
   border: 5px solid black;

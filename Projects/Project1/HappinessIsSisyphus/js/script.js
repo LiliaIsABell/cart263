@@ -10,6 +10,7 @@ to match your project! Write JavaScript to do amazing things below!
 
 *********************************************************************/
 // Variables
+
 let $ghosts;
 // Squares for the ghost meter
 let $square1;
@@ -22,8 +23,9 @@ let $square7;
 let $square8;
 // Current square
 let currentSquare = 0;
-
-
+// Sounds
+const eerieSound = new Audio("assets/sounds/errie_sound.wav");
+const captured = new Audio("assets/sounds/captured.wav");
 
 // Start program
 $(document).ready(setup);
@@ -85,6 +87,9 @@ function startMessage() {
     buttons: {
       Ok: function() {
         $(this).dialog("close");
+        // Sound starts when OK is pressed
+        eerieSound.loop = true;
+        eerieSound.play();
       }
     }
   });
@@ -117,6 +122,8 @@ function ghostCollected(event, ui) {
   console.log(currentSquare);
   // The ghost will be removed
   ui.draggable.remove();
+  // Sound plays when a ghost is captured
+  captured.play();
   // When 7 ghosts are collected,
   // everything will reset
   if (currentSquare === 7) {
@@ -138,7 +145,7 @@ function reset() {
   for (let i = 1; i < 9; i++) {
     let ghostNum = "ghost" + i;
     // Bring back the ghost at the begining of the body
-    $("body").prepend('<img class="' + ghostNum + ' ghost" src="assets/images/ghost.png" alt="ghost" height="120"></img>');
+    $("body").prepend('<img class="' + ghostNum + ' ghost" src="assets/images/ghost_green.png" alt="ghost" height="120"></img>');
   }
   // Random ghost positioning
   $(".ghost").each(function(index, singleGhost) {
