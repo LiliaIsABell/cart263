@@ -51,25 +51,94 @@ body {
   border: 5px solid black;
 }
 
-.ghost1 {
-  position: absolute;
-  z-index: -1;
-  float: left;
-  margin-bottom: 200px;
-  /* background-color: rgb(255,255,255,255);
- animation-name: example;
- animation-duration: infinite; */
+.square8 {
+  background-color: white;
+  width: 100px;
+  height: 80px;
+  border: 5px solid black;
 }
 
-/* Standard syntax */
-/* @keyframes example {
-  from {
-    background-color: rgb(255, 255, 255, 255)
+/* The ghosts have an animation
+that makes them fade in and out */
+.ghost1 {
+  opacity: 0.2;
+  animation-name: peekaboo;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.ghost2 {
+  opacity: 0.2;
+  animation-name: peekaboo;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+
+.ghost3 {
+  opacity: 0.2;
+  animation-name: peekaboo;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.ghost4 {
+  opacity: 0.2;
+  animation-name: peekaboo;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+.ghost5 {
+  opacity: 0.2;
+  animation-name: peekaboo;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.ghost6 {
+  opacity: 0.2;
+  animation-name: peekaboo;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.ghost7 {
+  opacity: 0.2;
+  animation-name: peekaboo;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.ghost8 {
+  opacity: 0.2;
+  animation-name: peekaboo;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+/* keyframes to make the animation */
+@keyframes peekaboo {
+  0% {
+    opacity: 0;
   }
 
-  to {
-    background-color: rgb(255, 255, 255, 0);
-  } */
+  25% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .collected {
   background-color: black;
   width: 100px;
@@ -78,7 +147,9 @@ body {
 }
 
 .flex-container {
-  margin-top: 100px;
+  position: absolute z-index:-1;
+  left: 700px;
+  top: 300px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;

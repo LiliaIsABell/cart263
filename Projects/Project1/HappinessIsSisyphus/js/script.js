@@ -10,15 +10,8 @@ to match your project! Write JavaScript to do amazing things below!
 
 *********************************************************************/
 // Variables
-// Ghosts
-let $ghost1;
-let $ghost2;
-let $ghost3;
-let $ghost4;
-let $ghost5;
-let $ghost6;
-let $ghost7;
-// Squares for the meter
+let $ghosts;
+// Squares for the ghost meter
 let $square1;
 let $square2;
 let $square3;
@@ -26,8 +19,9 @@ let $square4;
 let $square5;
 let $square6;
 let $square7;
+let $square8;
 // Current square
-let currentSquare = 1;
+let currentSquare = 0;
 
 
 
@@ -37,14 +31,8 @@ $(document).ready(setup);
 // Setup
 //
 function setup() {
-  // Values for variables
-  $ghost1 = $('#ghost1');
-  $ghost2 = $('#ghost2');
-  $ghost3 = $('#ghost3');
-  $ghost4 = $('#ghost4');
-  $ghost5 = $('#ghost5');
-  $ghost6 = $('#ghost6');
-  $ghost7 = $('#ghost7');
+  // Values
+  $ghosts = $(".ghost");
   $square1 = $('.square1');
   $square2 = $('.square2');
   $square3 = $('.square3');
@@ -52,16 +40,7 @@ function setup() {
   $square5 = $('.square5');
   $square6 = $('.square6');
   $square7 = $('.square7');
-
-
-  // Ghosts are draggable
-  $ghost1.draggable();
-  $ghost2.draggable();
-  $ghost3.draggable();
-  $ghost4.draggable();
-  $ghost5.draggable();
-  $ghost6.draggable();
-  $ghost7.draggable();
+  $square8 = $('.square8');
 
   // The squares are dropable
   $square1.droppable({
@@ -85,6 +64,12 @@ function setup() {
   $square7.droppable({
     drop: ghostCollected
   });
+  $square8.droppable({
+    drop: ghostCollected
+  });
+
+  // This allows the ghost to reset
+  $ghosts.each(resetGhost);
 
 }
 
@@ -93,12 +78,53 @@ function setup() {
 function ghostCollected(event, ui) {
   // This variable allows the
   // squares to be counted
+  currentSquare += 1;
   let meter = ".square" + currentSquare;
   // When a ghost is dropped, the bottom
   // square will be colored and with
   // each ghost it will go upward
   $(meter).addClass('collected');
-  currentSquare += 1;
+  console.log(currentSquare);
   // The ghost will be removed
   ui.draggable.remove();
+  // When 7 ghosts are collected,
+  // everything will reset
+  if (currentSquare === 7) {
+    reset();
+  }
+}
+
+// Reset
+//
+function reset() {
+  // Meter returns to zero
+  currentSquare = 0;
+  $(".square").removeClass('collected');
+  // Loop to bring back the ghosts
+  for (let i = 1; i < 9; i++) {
+    let ghostNum = "ghost" + i;
+    // Bring back the ghost at the begining of the body
+    $("body").prepend('<img class="' + ghostNum + ' ghost" src="assets/images/ghost.png" alt="ghost" height="120"></img>');
+  }
+
+  $(".ghost").each(function(index, singleGhost) {
+    $(singleGhost).draggable();
+    $(singleGhost).css("position", "absolute");
+    let leftPos = Math.random() * 1000 + 100;
+    let topPos = Math.random() * 500 + 20;
+    $(singleGhost).css("left", leftPos + "px");
+    $(singleGhost).css("top", topPos + "px");
+    // console.log(singleGhost);
+  })
+}
+
+// Reset Ghost
+//
+function resetGhost(index, singleGhost) {
+  $(singleGhost).css("position", "absolute");
+  let leftPos = Math.random() * 1000 + 100;
+  let topPos = Math.random() * 500 + 20;
+  $(singleGhost).css("left", leftPos + "px");
+  $(singleGhost).css("top", topPos + "px");
+  $(singleGhost).draggable();
 }
