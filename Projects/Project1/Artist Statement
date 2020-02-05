@@ -1,0 +1,42 @@
+Lilia Isabel Aguirre Lugo 
+Pippin Barr 
+CART 263
+February 4 2020
+
+Artist Statement 
+
+The theme for this project is the myth of Sisyphus, which is about a king named Sisyphus who, 
+as punishment, has to roll a boulder up a hill for all of eternity. On that note, I decided to 
+create a game where the player is given a mission but they will never be able to achieve it and 
+so the game would continue forever. For this project, I mainly use jQuery, jQuery UI and experimented
+with CSS animation.
+
+The story of my game is that the player is an incompetent ghost guard who accidently let the 
+ghost they were guarding escape and it is the players mission to catch them and collect them 
+in a “ghost meter”. The goal is to collect 8 ghosts but the player will never reach that goal
+because the ghosts keep escaping right before that goal can be achieved, and so the player has
+to continuously try to catch all the ghosts. But never will.
+
+Ghosts – Using jQuery UI’s draggable function, the ghosts are draggable and the player has to
+drag them towards the “ghost meter”.  Also, the ghosts can disappear and reappear which gives
+an illusion of movement and makes them slightly difficult to find. This was done with CSS 
+animation, which changes the opacity of the ghost image.  When a ghost is dropped in the ghost 
+meter, a sound will play. 
+
+Ghost Meter – The game has a ghost meter that indicates the number of ghosts that need to be 
+captured and the amount of ghost that have been caught. I used the droppable function from 
+jQuery UI to make the counting possible and to make a function that makes it that the meter
+starts from the bottom and fills to the top. The ghost meter has 8 levels for 8 ghosts, but
+when the 7th one is reached, the game resets and will continuously reset whenever 7 ghosts 
+are caught. In addition, because of this, one ghost is left out each time and so the number 
+of ghosts on the screen increases each time the game resets.
+
+Dialog - The game starts with a message, using a modal message dialog box, which does not
+allow the player to interact with the game unless they click the OK button. Interacting 
+with the OK button also allows for the background sound to start playing. The message rudely 
+informs the player that they accidently released trapped ghosts and that they now have to 
+catch them all. A dialog box also appears when the ghost meter reaches the 7th level which 
+presents a rude message telling the player that they are useless and need to try to catch
+the ghost again. I chose to have a rude message to resemble a terrible manager and the loath 
+of having to listen to them. jQuery UI was used to make the dialog and I included them in the
+game to add some personality to it and a little more to interact with.
