@@ -21,9 +21,10 @@ let animalsGuessed;
 // number of options
 const NUM_OPTIONS = 4;
 
-
+// Commands
 let commands = {
-  'i give up': quit
+  'i give up': quit,
+  'can you repeat please': repeat
 }
 
 // Animal options
@@ -172,10 +173,9 @@ $(document).ready(setup);
 //
 function setup() {
 
+  // Setup annyang
   if (annyang) {
-
     annyang.addCommands(commands);
-
     annyang.start();
   }
   // Shows new animal buttons
@@ -268,21 +268,32 @@ function handleGuess() {
     animalsGuessed.text($correctAnimals);
 
     // the voice repeats itself
+    // * but it does not work *
     sayBackwards();
   }
 }
 
+// Quit
+//
 function quit() {
 
-  let correctAnswer = $('correctAnimal');
-
+  let correctAnswer = $(correctAnimal);
   // When the words "i give up" are spoken
-  if (correctAnswer.addClass('highlight')) {
-    // the score returns to 0
-    $correctAnimals = 0;
-    // the span for the score changes back
-    // to zero
-    animalsGuessed.text($correctAnimals);
-  };
+  correctAnswer.addClass('highlight')
+
+  // the score returns to 0
+  $correctAnimals = 0;
+  // the span for the score changes back
+  // to zero
+  animalsGuessed.text($correctAnimals);
+
   console.log('working');
+}
+
+// Repeat
+//
+function repeat() {
+  // The word repeats
+  // *but it does not work*
+  sayBackwards();
 }
