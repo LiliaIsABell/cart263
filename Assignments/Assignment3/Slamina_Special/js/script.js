@@ -9,7 +9,22 @@ This is a template. Fill in the title, author, and this description
 to match your project! Write JavaScript to do amazing things below!
 
 *********************************************************************/
-// Variable and Constants
+// Variables and Constants
+
+// correct answer
+let correctAnimal;
+// possible answers
+let answers = [];
+// score
+let $correctAnimals = 0;
+let animalsGuessed;
+// number of options
+const NUM_OPTIONS = 4;
+
+
+let commands = {
+  'i give up': quit
+}
 
 // Animal options
 let animals = [
@@ -149,20 +164,25 @@ let animals = [
   "zebra"
 ];
 
-// Variables for buttons
-let correctAnimal;
-let answers = [];
-const NUM_OPTIONS = 4;
 
-// Star program
+// Start program
 $(document).ready(setup);
 
 // Setup
 //
 function setup() {
 
+  if (annyang) {
+
+    annyang.addCommands(commands);
+
+    annyang.start();
+  }
   // Shows new animal buttons
   newRound();
+
+  // Allows the span to change
+  animalsGuessed = $('#score');
 }
 
 // Add Button
@@ -227,15 +247,42 @@ function handleGuess() {
   if ($(this).text() === correctAnimal) {
     // all the options are removed
     $(".guess").remove();
+    // the score increases
+    $correctAnimals += 1;
+    // the span for the score changes numbers
+    // to display the score
+    animalsGuessed.text($correctAnimals);
+
     // and news ones are set up after
     // an interval of time
     setTimeout(newRound, 1000);
   }
   // if the wrong one is clicked
   else {
+    // the score returns to 0
+    $correctAnimals = 0;
     // the box shakes
     $(this).effect('shake');
+    // the span for the score changes back
+    // to zero
+    animalsGuessed.text($correctAnimals);
+
     // the voice repeats itself
     sayBackwards();
   }
+}
+
+function quit() {
+
+  let correctAnswer = $('correctAnimal');
+
+  // When the words "i give up" are spoken
+  if (correctAnswer.addClass('highlight')) {
+    // the score returns to 0
+    $correctAnimals = 0;
+    // the span for the score changes back
+    // to zero
+    animalsGuessed.text($correctAnimals);
+  };
+  console.log('working');
 }
