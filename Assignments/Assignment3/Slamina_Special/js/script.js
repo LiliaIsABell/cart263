@@ -5,9 +5,6 @@
 Slamina Special
 Lilia Isabel Aguirre Lugo
 
-This is a template. Fill in the title, author, and this description
-to match your project! Write JavaScript to do amazing things below!
-
 *********************************************************************/
 // Variables and Constants
 
@@ -24,7 +21,8 @@ const NUM_OPTIONS = 4;
 // Commands
 let commands = {
   'i give up': quit,
-  'can you repeat please': repeat
+  'can you repeat please': repeat,
+  // 'is it *tag': askHint
 }
 
 // Animal options
@@ -264,36 +262,55 @@ function handleGuess() {
     // the box shakes
     $(this).effect('shake');
     // the span for the score changes back
-    // to zero
+    // to zero and
     animalsGuessed.text($correctAnimals);
-
     // the voice repeats itself
-    // * but it does not work *
-    sayBackwards();
+    sayBackwards(correctAnimal);
   }
 }
 
 // Quit
 //
 function quit() {
+// Selects all the buttons
+  let buttons = $('.guess');
+  $(buttons).each(choseButton);
 
-  let correctAnswer = $(correctAnimal);
-  // When the words "i give up" are spoken
-  correctAnswer.addClass('highlight')
-
+// When the words " i give up" are spoken
   // the score returns to 0
   $correctAnimals = 0;
   // the span for the score changes back
   // to zero
   animalsGuessed.text($correctAnimals);
+}
 
-  console.log('working');
+// Choose button
+//
+function choseButton(element){
+  // When the words " i give up" are spoken
+  if ($(this).text()=== correctAnimal){
+    // the buttons fade out
+    $('.guess').fadeOut(700);
+    // the correct answers button turns green
+    $(this).css('background-color',"rgb(0, 255, 47)");
+    // a new round appears
+    setTimeout(newRound, 1400);
+  }
 }
 
 // Repeat
 //
 function repeat() {
   // The word repeats
-  // *but it does not work*
-  sayBackwards();
+  sayBackwards(correctAnimal);
 }
+
+// Ask Hint
+//
+// function askHint(tag){
+//   let hintAsked = animals;
+//
+// if (hintAsked === correctAnimal){
+//   responsiveVoice.speak("no", "UK English Male")
+// }
+// }
