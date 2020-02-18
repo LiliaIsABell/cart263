@@ -13,7 +13,7 @@ let correctAnimal;
 // possible answers
 let answers = [];
 // score
-let $correctAnimals = 0;
+let $points = 0;
 let animalsGuessed;
 // number of options
 const NUM_OPTIONS = 4;
@@ -22,7 +22,7 @@ const NUM_OPTIONS = 4;
 let commands = {
   'i give up': quit,
   'can you repeat please': repeat,
-  // 'is it *tag': askHint
+  'is it *tag': askHint
 }
 
 // Animal options
@@ -176,6 +176,7 @@ function setup() {
     annyang.addCommands(commands);
     annyang.start();
   }
+
   // Shows new animal buttons
   newRound();
 
@@ -186,6 +187,7 @@ function setup() {
 // Add Button
 //
 function addButton(label) {
+
   // Creates a div in the HTML
   let $button = $('<div></div>');
   // Makes and adds a class
@@ -204,6 +206,7 @@ function addButton(label) {
 // Say Backwards
 //
 function sayBackwards(text) {
+
   // Turns the text backwards
   let backwardsText = text.split('').reverse().join('');
   // changes the rate and pitch of the
@@ -219,6 +222,7 @@ function sayBackwards(text) {
 // newRound
 //
 function newRound() {
+
   // Answers array is empty
   answers = [];
   // A loop is made to choose 4 random animals
@@ -241,58 +245,66 @@ function newRound() {
 // Handle Guess
 //
 function handleGuess() {
+
   // If the correct animal is clicked
   if ($(this).text() === correctAnimal) {
     // all the options are removed
     $(".guess").remove();
     // the score increases
-    $correctAnimals += 1;
+    $points += 1;
     // the span for the score changes numbers
     // to display the score
-    animalsGuessed.text($correctAnimals);
+    animalsGuessed.text($points);
 
     // and news ones are set up after
     // an interval of time
     setTimeout(newRound, 1000);
   }
+
   // if the wrong one is clicked
   else {
-    // the score returns to 0
-    $correctAnimals = 0;
+    // the score resets
+    resetScore();
     // the box shakes
     $(this).effect('shake');
-    // the span for the score changes back
-    // to zero and
-    animalsGuessed.text($correctAnimals);
     // the voice repeats itself
     sayBackwards(correctAnimal);
   }
 }
 
+// Reset Score
+//
+function resetScore() {
+
+  // the score returns to 0
+  $points = 0;
+  // the span for the score changes back
+  // to zero
+  animalsGuessed.text($points);
+}
+
 // Quit
 //
 function quit() {
-// Selects all the buttons
+
+  // Selects all the buttons
   let buttons = $('.guess');
   $(buttons).each(choseButton);
 
-// When the words " i give up" are spoken
-  // the score returns to 0
-  $correctAnimals = 0;
-  // the span for the score changes back
-  // to zero
-  animalsGuessed.text($correctAnimals);
+  // When the words " i give up" are spoken
+  resetScore();
 }
 
 // Choose button
 //
-function choseButton(element){
+function choseButton(element) {
+
   // When the words " i give up" are spoken
-  if ($(this).text()=== correctAnimal){
+  if ($(this).text() === correctAnimal) {
     // the buttons fade out
     $('.guess').fadeOut(700);
     // the correct answers button turns green
-    $(this).css('background-color',"rgb(0, 255, 47)");
+    $(this).css('background-color', "rgb(0, 255, 47)");
     // a new round appears
     setTimeout(newRound, 1400);
   }
@@ -301,16 +313,40 @@ function choseButton(element){
 // Repeat
 //
 function repeat() {
+
   // The word repeats
   sayBackwards(correctAnimal);
 }
 
 // Ask Hint
 //
-// function askHint(tag){
-//   let hintAsked = animals;
-//
-// if (hintAsked === correctAnimal){
-//   responsiveVoice.speak("no", "UK English Male")
-// }
-// }
+function askHint(tag) {
+
+  // The user asks "is it ****"
+
+  // If correct,
+  if (tag.toLowerCase() === correctAnimal.toLowerCase()) {
+    // the voice says "yes"
+    responsiveVoice.speak("yes", "UK English Male");
+    // all the options are removed
+    $(".guess").remove();
+    // the score increases
+    $points += 1;
+    // the span for the score changes numbers
+    // to display the score
+    animalsGuessed.text($points);
+    // new round starts
+    setTimeout(newRound, 1000);
+  }
+  // If wrong,
+  else {
+    // the voice says "no"
+    responsiveVoice.speak("no", "UK English Male");
+    // the box shakes
+    $(this).effect('shake');
+    // the score resets
+    resetScore();
+  }
+  // to check if word is well pronounced
+  console.log(tag);
+}
