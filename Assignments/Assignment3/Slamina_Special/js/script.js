@@ -342,8 +342,8 @@ function askHint(tag) {
   else {
     // the voice says "no"
     responsiveVoice.speak("no", "UK English Male");
-    // the box shakes
-    $(this).effect('shake');
+    // all the box shake
+    $(".guess").effect('shake');
     // the score resets
     resetScore();
   }
