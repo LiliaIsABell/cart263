@@ -2,10 +2,19 @@
 
 /********************************************************************
 
-Title of Project
-Author Name
+Something is Wrong on the Internet
+Lilia Isabel Aguirre Lugo
 
-This is a template. Fill in the title, author, and this description
-to match your project! Write JavaScript to do amazing things below!
+DO NOT FORGET YOUR DESCRIPTION
 
 *********************************************************************/
+
+
+
+
+
+$(document).ready(setup);
+
+function setup(){
+
+}
