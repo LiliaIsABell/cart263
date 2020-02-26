@@ -10,7 +10,7 @@ DO NOT FORGET YOUR DESCRIPTION
 *********************************************************************/
 
 // Variables
-// Choices throught the story
+// Choices throughout the story
 let activities = ["go to the apple tree acre",
   "go to the lake"
 ];
@@ -18,11 +18,19 @@ let decisions = ["follow the butterfly",
   "take a nap",
   "follow the path"
 ];
+let finalChoice = ["Through the Door",
+  "Into the Hole"
+];
 
-// The two options
-// (these will change throughout the story)
+// The options
 let optionA;
 let optionB;
+let optionC;
+let optionD;
+let optionE;
+let optionF;
+let optionG;
+
 
 // The text of the story that changes
 let $storyText;
@@ -36,8 +44,8 @@ function setup() {
   // Spans allow for the text to change
   $storyText = $("#story");
 
-  // Application of the choices
-  activityChoice();
+  // These are the very first choices presented
+  startingChoices();
 }
 
 // Add Button
@@ -56,26 +64,27 @@ function addButton(label) {
   // append the button in the center
   $('center').append($button);
   // When a button is clicked,
-  // the next act starts
-  $button.on('click', handleAct1);
+  // the story moves on based on the choices
+  $button.on('click', handleStoryChoices);
 
 }
 
-// Choice of activities
+// Starting Choices
 //
-function activityChoice() {
+function startingChoices() {
   optionA = activities[0];
   optionB = activities[1];
   addButton(optionA);
   addButton(optionB);
 }
 
-// Handle Act 1
+// Handle Story Choices
 //
-function handleAct1() {
+function handleStoryChoices() {
+  // Act 1
   // If option A is chosen,
   if ($(this).text() === optionA) {
-    // the story continues based on the choice,
+    // the dog goes to the apple tree acre,
     $storyText.text("The dog walks among the apple trees" +
       " enjoying the shade. He suddenly sees" +
       " a dirt path that he never noticed before" +
@@ -84,13 +93,49 @@ function handleAct1() {
     // the previous options are removed,
     $('.options').remove()
     // and the new ones are added
-    optionA = act2Choices[1];
-    optionB = act2Choices[2];
-    addButton(optionA);
-    addButton(optionB);
-    // If option B is chosen,
-  } else if ($(this).text() === optionB) {
-    // the story continues based on the choice,
+    optionD = decisions[1];
+    optionE = decisions[2];
+    addButton(optionD);
+    addButton(optionE);
+    // Act 2
+    // If option D is chosen,
+  } else if ($(this).text() === optionD) {
+    // the dog takes a nap and wakes up
+    $storyText.text("The dog wakes up from his nap," +
+      " no longer in the acre. Cold" +
+      " metal walls covered with stains" +
+      " and viscous substances. Ahead" +
+      " is, what seems to be a door." +
+      " He cautiously approaches it.")
+    // the previous options are removed,
+    $('.options').remove()
+    // and the last button is added
+    optionF = finalChoice[0];
+    addButton(optionF);
+
+    // If option E is chosen,
+  } else if ($(this).text() === optionE) {
+    // the dog reaches an open plain and falls in a hole
+    $storyText.text("The path lead to an open plain." +
+      " No trees, just grass going on as" +
+      " far as the sky. Excited, the dog" +
+      " starts to run around in his new" +
+      " found play area. He can't wait" +
+      " to come back here with his owners." +
+      " Suddenly, the dog notices a big hole." +
+      " When trying to stop he trips and" +
+      " roles towards the hole and falls in.");
+    // the previous options are removed,
+    $('.options').remove()
+    // and the last button is added
+    optionG = finalChoice[1];
+    addButton(optionG);
+  }
+
+  // Act 1
+  // If option B is chosen,
+  if ($(this).text() === optionB) {
+    // the dog goes to the lake,
     $storyText.text("The dog plays in the lake," +
       " enjoying his escape from the heat." +
       " All of that activity made him very" +
@@ -100,9 +145,42 @@ function handleAct1() {
     // the previous options are removed,
     $('.options').remove()
     // and the new ones are added
-    optionA = act2Choices[0];
-    optionB = act2Choices[1];
-    addButton(optionA);
-    addButton(optionB);
+    optionC = decisions[0];
+    optionD = decisions[1];
+    addButton(optionC);
+    addButton(optionD);
+    // Act 2
+    // If option C is chosen,
+  } else if ($(this).text() === optionC) {
+    // the dog reaches an open plain and falls in a hole
+    $storyText.text("The butterfly leads the dog to an open plain." +
+      " No trees, just grass going on as" +
+      " far as the sky. Excited, the dog" +
+      " starts to run around in his new" +
+      " found play area. He can't wait" +
+      " to come back here with his owners." +
+      " Suddenly, the dog notices a big hole." +
+      " When trying to stop he trips and" +
+      " roles towards the hole and falls in.");
+    // the previous options are removed,
+    $('.options').remove()
+    // and the last button is added
+    optionG = finalChoice[1];
+    addButton(optionG);
+
+    // If option D is chosen,
+  } else if ($(this).text() === optionD) {
+    // the dog takes a nap and wakes up
+    $storyText.text("The dog wakes up from his nap," +
+      " no longer in the acre. Cold" +
+      " metal walls covered with stains" +
+      " and viscous substances. Ahead" +
+      " is, what seems to be a door." +
+      " He cautiously approaches it.");
+    // the previous options are removed,
+    $('.options').remove()
+    // and the last button is added
+    optionF = finalChoice[0];
+    addButton(optionF);
   }
 }
