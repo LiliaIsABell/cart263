@@ -1,15 +1,24 @@
-body {}
+body {
+
+}
+
+  span {
+    font-size: 3em;
+  }
+
+.farm-background {
+position: absolute;
+z-index: -1;
+top: 0;
+left:0;
+}
 
 .storybox {
-  background-color: #a6ffbe;
+  background-color: rgba(166, 255, 190,0.5);
   width: 500px;
   border: 15px;
   padding: 50px;
   margin: 10px;
-}
-
-span {
-  font-size: 3em;
 }
 
 .blackbackground {

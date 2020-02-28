@@ -91,35 +91,12 @@ function handleStoryChoices() {
   // Act 1
   // If option A is chosen,
   if ($(this).text() === optionA) {
-    // the dog goes to the apple tree acre,
-    $storyText.text("The dog walks among the apple trees" +
-      " enjoying the shade. He suddenly sees" +
-      " a dirt path that he never noticed before" +
-      " and wondered what was ahead, but he was" +
-      " also very tired. He decides to... ");
-    // the previous options are removed,
-    $('.options').remove()
-    // and the new ones are added
-    optionD = decisions[1];
-    optionE = decisions[2];
-    addButton(optionD);
-    addButton(optionE);
+    appleAcre();
+
     // Act 2
     // If option D is chosen,
   } else if ($(this).text() === optionD) {
-    // the dog takes a nap and wakes up
-    $storyText.text("The dog wakes up from his nap," +
-      " no longer in the acre. Cold" +
-      " metal walls covered with stains" +
-      " and viscous substances. Ahead" +
-      " is, what seems to be a door." +
-      " He cautiously approaches it.")
-    // the previous options are removed,
-    $('.options').remove()
-    // and the last button is added
-    optionF = finalChoice[0];
-    addButton(optionF);
-
+    takesNap();
     // When the last button is pressed
   } else if ($(this).text() === optionF) {
     creepyInteraction();
@@ -127,21 +104,7 @@ function handleStoryChoices() {
 
   // If option E is chosen,
   else if ($(this).text() === optionE) {
-    // the dog reaches an open plain and falls in a hole
-    $storyText.text("The path lead to an open plain." +
-      " No trees, just grass going on as" +
-      " far as the sky. Excited, the dog" +
-      " starts to run around in his new" +
-      " found play area. He can't wait" +
-      " to come back here with his owners." +
-      " Suddenly, the dog notices a big hole." +
-      " When trying to stop he trips and" +
-      " roles towards the hole and falls in.");
-    // the previous options are removed,
-    $('.options').remove()
-    // and the last button is added
-    optionG = finalChoice[1];
-    addButton(optionG);
+    followsPath();
 
     // When the last button is pressed
   } else if ($(this).text() === optionG) {
@@ -151,38 +114,12 @@ function handleStoryChoices() {
   // Act 1
   // If option B is chosen,
   if ($(this).text() === optionB) {
-    // the dog goes to the lake,
-    $storyText.text("The dog plays in the lake," +
-      " enjoying his escape from the heat." +
-      " All of that activity made him very" +
-      " tired, but he suddenly sees a beautiful" +
-      " butterfly and has the urge to chase" +
-      " it. He decides to...");
-    // the previous options are removed,
-    $('.options').remove()
-    // and the new ones are added
-    optionC = decisions[0];
-    optionD = decisions[1];
-    addButton(optionC);
-    addButton(optionD);
+    lake();
+
     // Act 2
     // If option C is chosen,
   } else if ($(this).text() === optionC) {
-    // the dog reaches an open plain and falls in a hole
-    $storyText.text("The butterfly leads the dog to an open plain." +
-      " No trees, just grass going on as" +
-      " far as the sky. Excited, the dog" +
-      " starts to run around in his new" +
-      " found play area. He can't wait" +
-      " to come back here with his owners." +
-      " Suddenly, the dog notices a big hole." +
-      " When trying to stop he trips and" +
-      " roles towards the hole and falls in.");
-    // the previous options are removed,
-    $('.options').remove()
-    // and the last button is added
-    optionG = finalChoice[1];
-    addButton(optionG);
+    followsButterfly();
 
     // When the last button is pressed
   } else if ($(this).text() === optionG) {
@@ -191,18 +128,7 @@ function handleStoryChoices() {
 
   // If option D is chosen,
   else if ($(this).text() === optionD) {
-    // the dog takes a nap and wakes up
-    $storyText.text("The dog wakes up from his nap," +
-      " no longer in the acre. Cold" +
-      " metal walls covered with stains" +
-      " and viscous substances. Ahead" +
-      " is, what seems to be a door." +
-      " He cautiously approaches it.");
-    // the previous options are removed,
-    $('.options').remove()
-    // and the last button is added
-    optionF = finalChoice[0];
-    addButton(optionF);
+    takesNap();
 
     // When the last button is pressed
   } else if ($(this).text() === optionF) {
@@ -225,7 +151,92 @@ function creepyInteraction() {
   // Black background added
   $('body').addClass("blackbackground");
   // Remove text
+  $storyText.remove();
   $('.storybox').removeClass();
   // Remove buttons
   $('.options').remove();
+}
+
+function appleAcre() {
+  // the dog goes to the apple tree acre,
+  $storyText.text("The dog walks among the apple trees" +
+    " enjoying the shade. He suddenly sees" +
+    " a dirt path that he never noticed before" +
+    " and wondered what was ahead, but he was" +
+    " also very tired. He decides to... ");
+  // the previous options are removed,
+  $('.options').remove()
+  // and the new ones are added
+  optionD = decisions[1];
+  optionE = decisions[2];
+  addButton(optionD);
+  addButton(optionE);
+}
+
+function lake() {
+  // the dog goes to the lake,
+  $storyText.text("The dog plays in the lake," +
+    " enjoying his escape from the heat." +
+    " All of that activity made him very" +
+    " tired, but he suddenly sees a beautiful" +
+    " butterfly and has the urge to chase" +
+    " it. He decides to...");
+  // the previous options are removed,
+  $('.options').remove()
+  // and the new ones are added
+  optionC = decisions[0];
+  optionD = decisions[1];
+  addButton(optionC);
+  addButton(optionD);
+}
+
+function takesNap() {
+  // the dog takes a nap and wakes up
+  $storyText.text("The dog wakes up from his nap," +
+    " no longer in the acre. Cold" +
+    " metal walls covered with stains" +
+    " and viscous substances. Ahead" +
+    " is, what seems to be a door." +
+    " He cautiously approaches it.")
+  // the previous options are removed,
+  $('.options').remove()
+  // and the last button is added
+  optionF = finalChoice[0];
+  addButton(optionF);
+}
+
+function followsPath() {
+  // the dog reaches an open plain and falls in a hole
+  $storyText.text("The path lead to an open plain." +
+    " No trees, just grass going on as" +
+    " far as the sky. Excited, the dog" +
+    " starts to run around in his new" +
+    " found play area. He can't wait" +
+    " to come back here with his owners." +
+    " Suddenly, the dog notices a big hole." +
+    " When trying to stop he trips and" +
+    " roles towards the hole and falls in.");
+  // the previous options are removed,
+  $('.options').remove()
+  // and the last button is added
+  optionG = finalChoice[1];
+  addButton(optionG);
+}
+
+function followsButterfly() {
+  // the dog reaches an open plain and falls in a hole
+  $storyText.text("The butterfly leads the dog to an open plain." +
+    " No trees, just grass going on as" +
+    " far as the sky. Excited, the dog" +
+    " starts to run around in his new" +
+    " found play area. He can't wait" +
+    " to come back here with his owners." +
+    " Suddenly, the dog notices a big hole." +
+    " When trying to stop he trips and" +
+    " roles towards the hole and falls in.");
+  // the previous options are removed,
+  $('.options').remove()
+  // and the last button is added
+  optionG = finalChoice[1];
+  addButton(optionG);
 }
