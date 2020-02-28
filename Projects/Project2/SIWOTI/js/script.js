@@ -35,6 +35,13 @@ let optionG;
 // The text of the story that changes
 let $storyText;
 
+// Voice
+let voice = 'UK English Male';
+let voiceParameters = {
+  pitch: 0.2,
+  rate: 0.8
+};
+
 
 $(document).ready(setup);
 
@@ -113,8 +120,13 @@ function handleStoryChoices() {
     optionF = finalChoice[0];
     addButton(optionF);
 
-    // If option E is chosen,
-  } else if ($(this).text() === optionE) {
+    // When the last button is pressed
+  } else if ($(this).text() === optionF) {
+    creepyInteraction();
+  }
+
+  // If option E is chosen,
+  else if ($(this).text() === optionE) {
     // the dog reaches an open plain and falls in a hole
     $storyText.text("The path lead to an open plain." +
       " No trees, just grass going on as" +
@@ -130,6 +142,10 @@ function handleStoryChoices() {
     // and the last button is added
     optionG = finalChoice[1];
     addButton(optionG);
+
+    // When the last button is pressed
+  } else if ($(this).text() === optionG) {
+    creepyInteraction();
   }
 
   // Act 1
@@ -168,8 +184,13 @@ function handleStoryChoices() {
     optionG = finalChoice[1];
     addButton(optionG);
 
-    // If option D is chosen,
-  } else if ($(this).text() === optionD) {
+    // When the last button is pressed
+  } else if ($(this).text() === optionG) {
+    creepyInteraction();
+  }
+
+  // If option D is chosen,
+  else if ($(this).text() === optionD) {
     // the dog takes a nap and wakes up
     $storyText.text("The dog wakes up from his nap," +
       " no longer in the acre. Cold" +
@@ -182,5 +203,29 @@ function handleStoryChoices() {
     // and the last button is added
     optionF = finalChoice[0];
     addButton(optionF);
+
+    // When the last button is pressed
+  } else if ($(this).text() === optionF) {
+    creepyInteraction();
   }
+}
+
+// creepyInteraction
+//
+function creepyInteraction() {
+  // Creepy voice speaks
+  responsiveVoice.speak("hello child. I hope that by" +
+    " now you realise that this story is pointless and" +
+    " that your choices mean, nothing. Just like in the" +
+    " real world our actions mean nothing and we are" +
+    " all just waiting for the sweet release of death." +
+    " You! especially are worthless and unimportant." +
+    " However, there is something you can do to become" +
+    " more meaningful.", voice, voiceParameters);
+  // Black background added
+  $('body').addClass("blackbackground");
+  // Remove text
+  $('.storybox').removeClass();
+  // Remove buttons
+  $('.options').remove();
 }

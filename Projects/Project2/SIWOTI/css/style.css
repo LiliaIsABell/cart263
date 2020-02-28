@@ -1,15 +1,17 @@
-body {
-
-}
+body {}
 
 .storybox {
-background-color: #a6ffbe;
-width: 500px;
-border: 15px;
-padding: 50px;
-margin: 10px;
+  background-color: #a6ffbe;
+  width: 500px;
+  border: 15px;
+  padding: 50px;
+  margin: 10px;
 }
 
 span {
   font-size: 3em;
+}
+
+.blackbackground {
+  background-color: #000000
 }
