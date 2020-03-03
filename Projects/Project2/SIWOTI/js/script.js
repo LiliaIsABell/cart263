@@ -39,8 +39,17 @@ let $storyText;
 let voice = 'UK English Male';
 let voiceParameters = {
   pitch: 0.2,
-  rate: 0.8
+  rate: 0.8,
+  onstart: speechOn,
+  onend: speechOff
 };
+
+let speaking = false;
+let uncomfortableComments = ['halahalalala',
+  "ratatatata",
+  'kikiriki',
+  'jiggly'
+];
 
 
 $(document).ready(setup);
@@ -113,7 +122,7 @@ function handleStoryChoices() {
 
   // Act 1
   // If option B is chosen,
-  if ($(this).text() === optionB) {
+  else if ($(this).text() === optionB) {
     lake();
 
     // Act 2
@@ -139,15 +148,6 @@ function handleStoryChoices() {
 // creepyInteraction
 //
 function creepyInteraction() {
-  // Creepy voice speaks
-  responsiveVoice.speak("hello child. I hope that by" +
-    " now you realise that this story is pointless and" +
-    " that your choices mean, nothing. Just like in the" +
-    " real world our actions mean nothing and we are" +
-    " all just waiting for the sweet release of death." +
-    " You! especially are worthless and unimportant." +
-    " However, there is something you can do to become" +
-    " more meaningful.", voice, voiceParameters);
   // Black background added
   $('body').addClass("blackbackground");
   // Remove text
@@ -155,6 +155,41 @@ function creepyInteraction() {
   $('.storybox').removeClass();
   // Remove buttons
   $('.options').remove();
+  // Creepy voice speaks
+  responsiveVoice.speak("hello child. I hope that by" +
+    " now you realise that this story is pointless and" +
+    " that your choices mean, nothing. Just like in the" +
+    " real world our actions are meaningless and we are" +
+    " all just waiting for the sweetrelease of death." +
+    " You! especially are worthless and unimportant." +
+    " However, there is something you can do to become" +
+    " more meaningful.", voice, voiceParameters);
+  // Uncomfortable comments are said when mouse moves
+  $(window).on('mousemove', handleMouseMove);
+
+
+}
+// Speech On and Off
+//
+function speechOn() {
+  speaking = true;
+}
+
+function speechOff() {
+  speaking = false;
+}
+
+// Handle Mouse Move
+//
+function handleMouseMove() {
+  let comments;
+  // A comment is chosen from the 4 options
+  comments = uncomfortableComments[Math.floor(Math.random() * uncomfortableComments.length)];
+  // the voice speaks only after the first monologue
+  if (speaking === false) {
+    responsiveVoice.speak(comments, voice, voiceParameters);
+  }
+  console.log('voice end');
 }
 
 function appleAcre() {
