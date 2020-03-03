@@ -161,14 +161,27 @@ function creepyInteraction() {
     " that your choices mean, nothing. Just like in the" +
     " real world our actions are meaningless and we are" +
     " all just waiting for the sweetrelease of death." +
-    " You! especially are worthless and unimportant." +
+    " You especially are worthless and unimportant." +
     " However, there is something you can do to become" +
-    " more meaningful.", voice, voiceParameters);
+    " more meaningful. Delicately draw small strokes with your cursor.", voice, voiceParameters);
+
   // Uncomfortable comments are said when mouse moves
   $(window).on('mousemove', handleMouseMove);
 
+  // New monologue starts after 1 minute
+  window.setTimeout(newMonologue,60*1000);
 
 }
+
+// New monologue
+//
+function newMonologue(){
+  // This is the last thing that is said
+  responsiveVoice.speak("ohh yea, that was very nice.", voice, voiceParameters);
+  // the mousemove effect stops
+  $(window).off('mousemove', handleMouseMove);
+}
+
 // Speech On and Off
 //
 function speechOn() {
