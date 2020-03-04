@@ -7,6 +7,7 @@ CART 263
 March 2nd 2020
 
 
+
 Artist Statement 
 
 For this project, we had to create something inspired by James Bridle’s essay “Something is wrong on the internet”. 
