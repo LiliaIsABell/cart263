@@ -5,7 +5,16 @@
 Something is Wrong on the Internet
 Lilia Isabel Aguirre Lugo
 
-DO NOT FORGET YOUR DESCRIPTION
+This project is presented as an interactive story.
+The short story is about a bored dog looking for something to do.
+-There is a series of buttons that lead to different settings.
+-But, they all lead to the same ending.
+
+The reader then meets a mysterious voice.
+-The voice reveals that the game is a setup.
+-It asks the reader to move the cursor.
+-The voice makes uncomfortable comments.
+-At the end, the voice threatens  the reader.
 
 *********************************************************************/
 
@@ -45,10 +54,10 @@ let voiceParameters = {
 };
 
 let speaking = false;
-let uncomfortableComments = ['halahalalala',
-  "ratatatata",
-  'kikiriki',
-  'jiggly'
+let uncomfortableComments = ['that feels nice',
+  "you're doing nicely",
+  'oh yeah',
+  'keep stroking, baby'
 ];
 
 
@@ -156,28 +165,32 @@ function creepyInteraction() {
   // Remove buttons
   $('.options').remove();
   // Creepy voice speaks
-  responsiveVoice.speak("hello child. I hope that by" +
-    " now you realise that this story is pointless and" +
-    " that your choices mean, nothing. Just like in the" +
-    " real world our actions are meaningless and we are" +
-    " all just waiting for the sweetrelease of death." +
-    " You especially are worthless and unimportant." +
-    " However, there is something you can do to become" +
-    " more meaningful. Delicately draw small strokes with your cursor.", voice, voiceParameters);
+  responsiveVoice.speak("hello puppy. I'm glad to see you." +
+    "Oh, sorry, this" +
+    "story is just a way to bring you here." +
+    "It's pointless just like you. I overheard from your parents and your"+
+    "friends. They aren't wrong. You are pretty worthless and unimportant." +
+    "Luckily for you, I can help you become valuable."+
+     "Delicately draw small strokes with your cursor.", voice, voiceParameters);
 
   // Uncomfortable comments are said when mouse moves
   $(window).on('mousemove', handleMouseMove);
 
-  // New monologue starts after 1 minute
-  window.setTimeout(newMonologue,60*1000);
+  // New monologue starts after around 1 minute
+  window.setTimeout(newMonologue, 90 * 1000);
 
 }
 
 // New monologue
 //
-function newMonologue(){
+function newMonologue() {
   // This is the last thing that is said
-  responsiveVoice.speak("ohh yea, that was very nice.", voice, voiceParameters);
+  responsiveVoice.speak("That felt fantastic. Who knew that such a"+
+  "precious little gem like you would end up here. And to think no one"+
+  "else can see your value except me. You are so lucky to find me."+
+  "I can't wait to see you again, my little puppy."+
+  "Oh, and don't speak of this to anyone. Unless you want the blood of innocent"+
+  "people on your hands. See you soon.", voice, voiceParameters);
   // the mousemove effect stops
   $(window).off('mousemove', handleMouseMove);
 }
@@ -223,7 +236,7 @@ function appleAcre() {
 
 function lake() {
   // the dog goes to the lake,
-  $storyText.text("The dog plays in the lake," +
+  $storyText.text("The dog swims in the lake," +
     " enjoying his escape from the heat." +
     " All of that activity made him very" +
     " tired, but he suddenly sees a beautiful" +
@@ -262,7 +275,7 @@ function followsPath() {
     " found play area. He can't wait" +
     " to come back here with his owners." +
     " Suddenly, the dog notices a big hole." +
-    " When trying to stop he trips and" +
+    " When trying to stop, he trips and" +
     " roles towards the hole and falls in.");
   // the previous options are removed,
   $('.options').remove()
@@ -280,7 +293,7 @@ function followsButterfly() {
     " found play area. He can't wait" +
     " to come back here with his owners." +
     " Suddenly, the dog notices a big hole." +
-    " When trying to stop he trips and" +
+    " When trying to stop, he trips and" +
     " roles towards the hole and falls in.");
   // the previous options are removed,
   $('.options').remove()
