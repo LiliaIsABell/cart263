@@ -16,7 +16,7 @@ $(document).ready(setup);
 //
 function setup() {
 // JSON
-// Added crayola.json to data.json
+// Added crayola.json and genres.json to data.json
 $.getJSON("assets/data/data.json")
 .done(dataLoaded)
 .fail(dataError);
@@ -47,8 +47,11 @@ let colors = getRandomElement(data.colors);
 // a color is chosen from colors
 let randomColor = colors.color;
 
+// Random music genre chosen
+let randomGenre = getRandomElement(data.genres);
+
 // Creates the description
-let condimentDescription = `${randomCondiment} ${verb} like a ${randomColor} ${randomCat} ${randomRoom}`;
+let condimentDescription = `${randomCondiment} ${verb} like a ${randomColor} ${randomCat} ${randomRoom} playing ${randomGenre} music`;
 // Adds it to the body
 $('body').append(condimentDescription);
 }

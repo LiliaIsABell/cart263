@@ -309,486 +309,857 @@
     "Zacuscă"
   ],
 
-  "colors": [
-      {
-          "color": "Almond",
-          "hex": "#EFDECD"
-      },
-      {
-          "color": "Antique Brass",
-          "hex": "#CD9575"
-      },
-      {
-          "color": "Apricot",
-          "hex": "#FDD9B5"
-      },
-      {
-          "color": "Aquamarine",
-          "hex": "#78DBE2"
-      },
-      {
-          "color": "Asparagus",
-          "hex": "#87A96B"
-      },
-      {
-          "color": "Atomic Tangerine",
-          "hex": "#FFA474"
-      },
-      {
-          "color": "Banana Mania",
-          "hex": "#FAE7B5"
-      },
-      {
-          "color": "Beaver",
-          "hex": "#9F8170"
-      },
-      {
-          "color": "Bittersweet",
-          "hex": "#FD7C6E"
-      },
-      {
-          "color": "Black",
-          "hex": "#000000"
-      },
-      {
-          "color": "Blue",
-          "hex": "#1F75FE"
-      },
-      {
-          "color": "Blue Bell",
-          "hex": "#A2A2D0"
-      },
-      {
-          "color": "Blue Green",
-          "hex": "#0D98BA"
-      },
-      {
-          "color": "Blue Violet",
-          "hex": "#7366BD"
-      },
-      {
-          "color": "Blush",
-          "hex": "#DE5D83"
-      },
-      {
-          "color": "Brick Red",
-          "hex": "#CB4154"
-      },
-      {
-          "color": "Brown",
-          "hex": "#B4674D"
-      },
-      {
-          "color": "Burnt Orange",
-          "hex": "#FF7F49"
-      },
-      {
-          "color": "Burnt Sienna",
-          "hex": "#EA7E5D"
-      },
-      {
-          "color": "Cadet Blue",
-          "hex": "#B0B7C6"
-      },
-      {
-          "color": "Canary",
-          "hex": "#FFFF99"
-      },
-      {
-          "color": "Caribbean Green",
-          "hex": "#00CC99"
-      },
-      {
-          "color": "Carnation Pink",
-          "hex": "#FFAACC"
-      },
-      {
-          "color": "Cerise",
-          "hex": "#DD4492"
-      },
-      {
-          "color": "Cerulean",
-          "hex": "#1DACD6"
-      },
-      {
-          "color": "Chestnut",
-          "hex": "#BC5D58"
-      },
-      {
-          "color": "Copper",
-          "hex": "#DD9475"
-      },
-      {
-          "color": "Cornflower",
-          "hex": "#9ACEEB"
-      },
-      {
-          "color": "Cotton Candy",
-          "hex": "#FFBCD9"
-      },
-      {
-          "color": "Dandelion",
-          "hex": "#FDDB6D"
-      },
-      {
-          "color": "Denim",
-          "hex": "#2B6CC4"
-      },
-      {
-          "color": "Desert Sand",
-          "hex": "#EFCDB8"
-      },
-      {
-          "color": "Eggplant",
-          "hex": "#6E5160"
-      },
-      {
-          "color": "Electric Lime",
-          "hex": "#CEFF1D"
-      },
-      {
-          "color": "Fern",
-          "hex": "#71BC78"
-      },
-      {
-          "color": "Forest Green",
-          "hex": "#6DAE81"
-      },
-      {
-          "color": "Fuchsia",
-          "hex": "#C364C5"
-      },
-      {
-          "color": "Fuzzy Wuzzy",
-          "hex": "#CC6666"
-      },
-      {
-          "color": "Gold",
-          "hex": "#E7C697"
-      },
-      {
-          "color": "Goldenrod",
-          "hex": "#FCD975"
-      },
-      {
-          "color": "Granny Smith Apple",
-          "hex": "#A8E4A0"
-      },
-      {
-          "color": "Gray",
-          "hex": "#95918C"
-      },
-      {
-          "color": "Green",
-          "hex": "#1CAC78"
-      },
-      {
-          "color": "Green Yellow",
-          "hex": "#F0E891"
-      },
-      {
-          "color": "Hot Magenta",
-          "hex": "#FF1DCE"
-      },
-      {
-          "color": "Inchworm",
-          "hex": "#B2EC5D"
-      },
-      {
-          "color": "Indigo",
-          "hex": "#5D76CB"
-      },
-      {
-          "color": "Jazzberry Jam",
-          "hex": "#CA3767"
-      },
-      {
-          "color": "Jungle Green",
-          "hex": "#3BB08F"
-      },
-      {
-          "color": "Laser Lemon",
-          "hex": "#FEFE22"
-      },
-      {
-          "color": "Lavender",
-          "hex": "#FCB4D5"
-      },
-      {
-          "color": "Macaroni and Cheese",
-          "hex": "#FFBD88"
-      },
-      {
-          "color": "Magenta",
-          "hex": "#F664AF"
-      },
-      {
-          "color": "Mahogany",
-          "hex": "#CD4A4C"
-      },
-      {
-          "color": "Manatee",
-          "hex": "#979AAA"
-      },
-      {
-          "color": "Mango Tango",
-          "hex": "#FF8243"
-      },
-      {
-          "color": "Maroon",
-          "hex": "#C8385A"
-      },
-      {
-          "color": "Mauvelous",
-          "hex": "#EF98AA"
-      },
-      {
-          "color": "Melon",
-          "hex": "#FDBCB4"
-      },
-      {
-          "color": "Midnight Blue",
-          "hex": "#1A4876"
-      },
-      {
-          "color": "Mountain Meadow",
-          "hex": "#30BA8F"
-      },
-      {
-          "color": "Navy Blue",
-          "hex": "#1974D2"
-      },
-      {
-          "color": "Neon Carrot",
-          "hex": "#FFA343"
-      },
-      {
-          "color": "Olive Green",
-          "hex": "#BAB86C"
-      },
-      {
-          "color": "Orange",
-          "hex": "#FF7538"
-      },
-      {
-          "color": "Orchid",
-          "hex": "#E6A8D7"
-      },
-      {
-          "color": "Outer Space",
-          "hex": "#414A4C"
-      },
-      {
-          "color": "Outrageous Orange",
-          "hex": "#FF6E4A"
-      },
-      {
-          "color": "Pacific Blue",
-          "hex": "#1CA9C9"
-      },
-      {
-          "color": "Peach",
-          "hex": "#FFCFAB"
-      },
-      {
-          "color": "Periwinkle",
-          "hex": "#C5D0E6"
-      },
-      {
-          "color": "Piggy Pink",
-          "hex": "#FDDDE6"
-      },
-      {
-          "color": "Pine Green",
-          "hex": "#158078"
-      },
-      {
-          "color": "Pink Flamingo",
-          "hex": "#FC74FD"
-      },
-      {
-          "color": "Pink Sherbert",
-          "hex": "#F78FA7"
-      },
-      {
-          "color": "Plum",
-          "hex": "#8E4585"
-      },
-      {
-          "color": "Purple Heart",
-          "hex": "#7442C8"
-      },
-      {
-          "color": "Purple Mountain's Majesty",
-          "hex": "#9D81BA"
-      },
-      {
-          "color": "Purple Pizzazz",
-          "hex": "#FE4EDA"
-      },
-      {
-          "color": "Radical Red",
-          "hex": "#FF496C"
-      },
-      {
-          "color": "Raw Sienna",
-          "hex": "#D68A59"
-      },
-      {
-          "color": "Razzle Dazzle Rose",
-          "hex": "#FF48D0"
-      },
-      {
-          "color": "Razzmatazz",
-          "hex": "#E3256B"
-      },
-      {
-          "color": "Red",
-          "hex": "#EE204D"
-      },
-      {
-          "color": "Red Orange",
-          "hex": "#FF5349"
-      },
-      {
-          "color": "Red Violet",
-          "hex": "#C0448F"
-      },
-      {
-          "color": "Robin's Egg Blue",
-          "hex": "#1FCECB"
-      },
-      {
-          "color": "Royal Purple",
-          "hex": "#7851A9"
-      },
-      {
-          "color": "Salmon",
-          "hex": "#FF9BAA"
-      },
-      {
-          "color": "Scarlet",
-          "hex": "#FC2847"
-      },
-      {
-          "color": "Screamin' Green",
-          "hex": "#76FF7A"
-      },
-      {
-          "color": "Sea Green",
-          "hex": "#93DFB8"
-      },
-      {
-          "color": "Sepia",
-          "hex": "#A5694F"
-      },
-      {
-          "color": "Shadow",
-          "hex": "#8A795D"
-      },
-      {
-          "color": "Shamrock",
-          "hex": "#45CEA2"
-      },
-      {
-          "color": "Shocking Pink",
-          "hex": "#FB7EFD"
-      },
-      {
-          "color": "Silver",
-          "hex": "#CDC5C2"
-      },
-      {
-          "color": "Sky Blue",
-          "hex": "#80DAEB"
-      },
-      {
-          "color": "Spring Green",
-          "hex": "#ECEABE"
-      },
-      {
-          "color": "Sunglow",
-          "hex": "#FFCF48"
-      },
-      {
-          "color": "Sunset Orange",
-          "hex": "#FD5E53"
-      },
-      {
-          "color": "Tan",
-          "hex": "#FAA76C"
-      },
-      {
-          "color": "Tickle Me Pink",
-          "hex": "#FC89AC"
-      },
-      {
-          "color": "Timberwolf",
-          "hex": "#DBD7D2"
-      },
-      {
-          "color": "Tropical Rain Forest",
-          "hex": "#17806D"
-      },
-      {
-          "color": "Tumbleweed",
-          "hex": "#DEAA88"
-      },
-      {
-          "color": "Turquoise Blue",
-          "hex": "#77DDE7"
-      },
-      {
-          "color": "Unmellow Yellow",
-          "hex": "#FFFF66"
-      },
-      {
-          "color": "Violet",
-          "hex": "#926EAE"
-      },
-      {
-          "color": "Violet Red",
-          "hex": "#F75394"
-      },
-      {
-          "color": "Vivid Tangerine",
-          "hex": "#FFA089"
-      },
-      {
-          "color": "Vivid Violet",
-          "hex": "#8F509D"
-      },
-      {
-          "color": "White",
-          "hex": "#FFFFFF"
-      },
-      {
-          "color": "Wild Blue Yonder",
-          "hex": "#A2ADD0"
-      },
-      {
-          "color": "Wild Strawberry",
-          "hex": "#FF43A4"
-      },
-      {
-          "color": "Wild Watermelon",
-          "hex": "#FC6C85"
-      },
-      {
-          "color": "Wisteria",
-          "hex": "#CDA4DE"
-      },
-      {
-          "color": "Yellow",
-          "hex": "#FCE883"
-      },
-      {
-          "color": "Yellow Green",
-          "hex": "#C5E384"
-      },
-      {
-          "color": "Yellow Orange",
-          "hex": "#FFAE42"
-      }
+  "colors": [{
+      "color": "Almond",
+      "hex": "#EFDECD"
+    },
+    {
+      "color": "Antique Brass",
+      "hex": "#CD9575"
+    },
+    {
+      "color": "Apricot",
+      "hex": "#FDD9B5"
+    },
+    {
+      "color": "Aquamarine",
+      "hex": "#78DBE2"
+    },
+    {
+      "color": "Asparagus",
+      "hex": "#87A96B"
+    },
+    {
+      "color": "Atomic Tangerine",
+      "hex": "#FFA474"
+    },
+    {
+      "color": "Banana Mania",
+      "hex": "#FAE7B5"
+    },
+    {
+      "color": "Beaver",
+      "hex": "#9F8170"
+    },
+    {
+      "color": "Bittersweet",
+      "hex": "#FD7C6E"
+    },
+    {
+      "color": "Black",
+      "hex": "#000000"
+    },
+    {
+      "color": "Blue",
+      "hex": "#1F75FE"
+    },
+    {
+      "color": "Blue Bell",
+      "hex": "#A2A2D0"
+    },
+    {
+      "color": "Blue Green",
+      "hex": "#0D98BA"
+    },
+    {
+      "color": "Blue Violet",
+      "hex": "#7366BD"
+    },
+    {
+      "color": "Blush",
+      "hex": "#DE5D83"
+    },
+    {
+      "color": "Brick Red",
+      "hex": "#CB4154"
+    },
+    {
+      "color": "Brown",
+      "hex": "#B4674D"
+    },
+    {
+      "color": "Burnt Orange",
+      "hex": "#FF7F49"
+    },
+    {
+      "color": "Burnt Sienna",
+      "hex": "#EA7E5D"
+    },
+    {
+      "color": "Cadet Blue",
+      "hex": "#B0B7C6"
+    },
+    {
+      "color": "Canary",
+      "hex": "#FFFF99"
+    },
+    {
+      "color": "Caribbean Green",
+      "hex": "#00CC99"
+    },
+    {
+      "color": "Carnation Pink",
+      "hex": "#FFAACC"
+    },
+    {
+      "color": "Cerise",
+      "hex": "#DD4492"
+    },
+    {
+      "color": "Cerulean",
+      "hex": "#1DACD6"
+    },
+    {
+      "color": "Chestnut",
+      "hex": "#BC5D58"
+    },
+    {
+      "color": "Copper",
+      "hex": "#DD9475"
+    },
+    {
+      "color": "Cornflower",
+      "hex": "#9ACEEB"
+    },
+    {
+      "color": "Cotton Candy",
+      "hex": "#FFBCD9"
+    },
+    {
+      "color": "Dandelion",
+      "hex": "#FDDB6D"
+    },
+    {
+      "color": "Denim",
+      "hex": "#2B6CC4"
+    },
+    {
+      "color": "Desert Sand",
+      "hex": "#EFCDB8"
+    },
+    {
+      "color": "Eggplant",
+      "hex": "#6E5160"
+    },
+    {
+      "color": "Electric Lime",
+      "hex": "#CEFF1D"
+    },
+    {
+      "color": "Fern",
+      "hex": "#71BC78"
+    },
+    {
+      "color": "Forest Green",
+      "hex": "#6DAE81"
+    },
+    {
+      "color": "Fuchsia",
+      "hex": "#C364C5"
+    },
+    {
+      "color": "Fuzzy Wuzzy",
+      "hex": "#CC6666"
+    },
+    {
+      "color": "Gold",
+      "hex": "#E7C697"
+    },
+    {
+      "color": "Goldenrod",
+      "hex": "#FCD975"
+    },
+    {
+      "color": "Granny Smith Apple",
+      "hex": "#A8E4A0"
+    },
+    {
+      "color": "Gray",
+      "hex": "#95918C"
+    },
+    {
+      "color": "Green",
+      "hex": "#1CAC78"
+    },
+    {
+      "color": "Green Yellow",
+      "hex": "#F0E891"
+    },
+    {
+      "color": "Hot Magenta",
+      "hex": "#FF1DCE"
+    },
+    {
+      "color": "Inchworm",
+      "hex": "#B2EC5D"
+    },
+    {
+      "color": "Indigo",
+      "hex": "#5D76CB"
+    },
+    {
+      "color": "Jazzberry Jam",
+      "hex": "#CA3767"
+    },
+    {
+      "color": "Jungle Green",
+      "hex": "#3BB08F"
+    },
+    {
+      "color": "Laser Lemon",
+      "hex": "#FEFE22"
+    },
+    {
+      "color": "Lavender",
+      "hex": "#FCB4D5"
+    },
+    {
+      "color": "Macaroni and Cheese",
+      "hex": "#FFBD88"
+    },
+    {
+      "color": "Magenta",
+      "hex": "#F664AF"
+    },
+    {
+      "color": "Mahogany",
+      "hex": "#CD4A4C"
+    },
+    {
+      "color": "Manatee",
+      "hex": "#979AAA"
+    },
+    {
+      "color": "Mango Tango",
+      "hex": "#FF8243"
+    },
+    {
+      "color": "Maroon",
+      "hex": "#C8385A"
+    },
+    {
+      "color": "Mauvelous",
+      "hex": "#EF98AA"
+    },
+    {
+      "color": "Melon",
+      "hex": "#FDBCB4"
+    },
+    {
+      "color": "Midnight Blue",
+      "hex": "#1A4876"
+    },
+    {
+      "color": "Mountain Meadow",
+      "hex": "#30BA8F"
+    },
+    {
+      "color": "Navy Blue",
+      "hex": "#1974D2"
+    },
+    {
+      "color": "Neon Carrot",
+      "hex": "#FFA343"
+    },
+    {
+      "color": "Olive Green",
+      "hex": "#BAB86C"
+    },
+    {
+      "color": "Orange",
+      "hex": "#FF7538"
+    },
+    {
+      "color": "Orchid",
+      "hex": "#E6A8D7"
+    },
+    {
+      "color": "Outer Space",
+      "hex": "#414A4C"
+    },
+    {
+      "color": "Outrageous Orange",
+      "hex": "#FF6E4A"
+    },
+    {
+      "color": "Pacific Blue",
+      "hex": "#1CA9C9"
+    },
+    {
+      "color": "Peach",
+      "hex": "#FFCFAB"
+    },
+    {
+      "color": "Periwinkle",
+      "hex": "#C5D0E6"
+    },
+    {
+      "color": "Piggy Pink",
+      "hex": "#FDDDE6"
+    },
+    {
+      "color": "Pine Green",
+      "hex": "#158078"
+    },
+    {
+      "color": "Pink Flamingo",
+      "hex": "#FC74FD"
+    },
+    {
+      "color": "Pink Sherbert",
+      "hex": "#F78FA7"
+    },
+    {
+      "color": "Plum",
+      "hex": "#8E4585"
+    },
+    {
+      "color": "Purple Heart",
+      "hex": "#7442C8"
+    },
+    {
+      "color": "Purple Mountain's Majesty",
+      "hex": "#9D81BA"
+    },
+    {
+      "color": "Purple Pizzazz",
+      "hex": "#FE4EDA"
+    },
+    {
+      "color": "Radical Red",
+      "hex": "#FF496C"
+    },
+    {
+      "color": "Raw Sienna",
+      "hex": "#D68A59"
+    },
+    {
+      "color": "Razzle Dazzle Rose",
+      "hex": "#FF48D0"
+    },
+    {
+      "color": "Razzmatazz",
+      "hex": "#E3256B"
+    },
+    {
+      "color": "Red",
+      "hex": "#EE204D"
+    },
+    {
+      "color": "Red Orange",
+      "hex": "#FF5349"
+    },
+    {
+      "color": "Red Violet",
+      "hex": "#C0448F"
+    },
+    {
+      "color": "Robin's Egg Blue",
+      "hex": "#1FCECB"
+    },
+    {
+      "color": "Royal Purple",
+      "hex": "#7851A9"
+    },
+    {
+      "color": "Salmon",
+      "hex": "#FF9BAA"
+    },
+    {
+      "color": "Scarlet",
+      "hex": "#FC2847"
+    },
+    {
+      "color": "Screamin' Green",
+      "hex": "#76FF7A"
+    },
+    {
+      "color": "Sea Green",
+      "hex": "#93DFB8"
+    },
+    {
+      "color": "Sepia",
+      "hex": "#A5694F"
+    },
+    {
+      "color": "Shadow",
+      "hex": "#8A795D"
+    },
+    {
+      "color": "Shamrock",
+      "hex": "#45CEA2"
+    },
+    {
+      "color": "Shocking Pink",
+      "hex": "#FB7EFD"
+    },
+    {
+      "color": "Silver",
+      "hex": "#CDC5C2"
+    },
+    {
+      "color": "Sky Blue",
+      "hex": "#80DAEB"
+    },
+    {
+      "color": "Spring Green",
+      "hex": "#ECEABE"
+    },
+    {
+      "color": "Sunglow",
+      "hex": "#FFCF48"
+    },
+    {
+      "color": "Sunset Orange",
+      "hex": "#FD5E53"
+    },
+    {
+      "color": "Tan",
+      "hex": "#FAA76C"
+    },
+    {
+      "color": "Tickle Me Pink",
+      "hex": "#FC89AC"
+    },
+    {
+      "color": "Timberwolf",
+      "hex": "#DBD7D2"
+    },
+    {
+      "color": "Tropical Rain Forest",
+      "hex": "#17806D"
+    },
+    {
+      "color": "Tumbleweed",
+      "hex": "#DEAA88"
+    },
+    {
+      "color": "Turquoise Blue",
+      "hex": "#77DDE7"
+    },
+    {
+      "color": "Unmellow Yellow",
+      "hex": "#FFFF66"
+    },
+    {
+      "color": "Violet",
+      "hex": "#926EAE"
+    },
+    {
+      "color": "Violet Red",
+      "hex": "#F75394"
+    },
+    {
+      "color": "Vivid Tangerine",
+      "hex": "#FFA089"
+    },
+    {
+      "color": "Vivid Violet",
+      "hex": "#8F509D"
+    },
+    {
+      "color": "White",
+      "hex": "#FFFFFF"
+    },
+    {
+      "color": "Wild Blue Yonder",
+      "hex": "#A2ADD0"
+    },
+    {
+      "color": "Wild Strawberry",
+      "hex": "#FF43A4"
+    },
+    {
+      "color": "Wild Watermelon",
+      "hex": "#FC6C85"
+    },
+    {
+      "color": "Wisteria",
+      "hex": "#CDA4DE"
+    },
+    {
+      "color": "Yellow",
+      "hex": "#FCE883"
+    },
+    {
+      "color": "Yellow Green",
+      "hex": "#C5E384"
+    },
+    {
+      "color": "Yellow Orange",
+      "hex": "#FFAE42"
+    }
+  ],
+
+  "genres": [
+    "2-step",
+    "4-beat",
+    "Acid breaks",
+    "Acid house",
+    "Acid jazz",
+    "Acid rock",
+    "Acid techno",
+    "Acid trance",
+    "Aggrotech",
+    "Alternative dance",
+    "Alternative metal",
+    "Alternative rock",
+    "Ambient dub",
+    "Ambient house",
+    "Ambient techno",
+    "Ambient",
+    "Anarcho punk",
+    "Anti-folk",
+    "Art punk",
+    "Art rock",
+    "Asian Underground",
+    "Avant-garde jazz",
+    "Baggy",
+    "Balearic Beat",
+    "Baltimore Club",
+    "Bassline",
+    "Beat music",
+    "Bebop",
+    "Big beat",
+    "Bitpop",
+    "Black metal",
+    "Boogie-woogie",
+    "Boogie",
+    "Bossa nova",
+    "Bouncy house",
+    "Bouncy techno",
+    "Breakbeat hardcore",
+    "Breakbeat",
+    "Breakcore",
+    "Breakstep",
+    "British dance",
+    "Britpop",
+    "Broken beat",
+    "Bubblegum dance",
+    "Canterbury scene",
+    "Cape jazz",
+    "Celtic metal",
+    "Celtic punk",
+    "Celtic",
+    "Chamber jazz",
+    "Chicago house",
+    "Chill out",
+    "Chillwave",
+    "Chinese rock",
+    "Chiptune",
+    "Christian metal",
+    "Christian punk",
+    "Christian rock",
+    "Classic trance",
+    "Coldwave",
+    "Contemporary folk",
+    "Continental Jazz",
+    "Cool jazz",
+    "Cosmic disco",
+    "Cowpunk",
+    "Crossover jazz",
+    "Crossover thrash",
+    "Crunk",
+    "Crust punk",
+    "Crustgrind",
+    "Cybergrind",
+    "D-beat",
+    "Dance-pop",
+    "Dance-punk",
+    "Dance-rock",
+    "Dark ambient",
+    "Dark cabaret",
+    "Dark electro",
+    "Dark psytrance",
+    "Dark Wave",
+    "Darkcore",
+    "Darkside jungle",
+    "Darkstep",
+    "Death industrial",
+    "Death metal",
+    "Deathcore",
+    "Deathrock",
+    "Deep house",
+    "Desert rock",
+    "Detroit techno",
+    "Digital hardcore",
+    "Disco house",
+    "Disco polo",
+    "Disco",
+    "Diva house",
+    "Dixieland",
+    "Djent",
+    "Doom metal",
+    "Doomcore",
+    "Downtempo",
+    "Dream house",
+    "Dream pop",
+    "Dream trance",
+    "Drone metal",
+    "Drone",
+    "Drum and bass",
+    "Drumfunk",
+    "Drumstep",
+    "Dub",
+    "Dubstep",
+    "Dubstyle",
+    "Dubtronica",
+    "Dunedin Sound",
+    "Dutch house",
+    "EDM",
+    "Electro backbeat",
+    "Electro house",
+    "Electro-grime",
+    "Electro-industrial",
+    "Electro",
+    "Electroacoustic",
+    "Electroclash",
+    "Electronic art music",
+    "Electronic rock",
+    "Electronica",
+    "Electronicore",
+    "Electropop",
+    "Electropunk",
+    "Emo",
+    "Epic doom",
+    "Ethereal wave",
+    "Ethnic electronica",
+    "Euro disco",
+    "Eurobeat",
+    "Eurodance",
+    "European free jazz",
+    "Europop",
+    "Experimental rock",
+    "Filk",
+    "Florida breaks",
+    "Folk metal",
+    "Folk punk",
+    "Folk rock",
+    "Folk",
+    "Folktronica",
+    "Freak folk",
+    "Freakbeat",
+    "Free tekno",
+    "Freestyle house",
+    "Freestyle",
+    "French house",
+    "Full on",
+    "Funeral doom",
+    "Funk metal",
+    "Funky house",
+    "Funky",
+    "Futurepop",
+    "Gabber",
+    "Garage punk",
+    "Garage rock",
+    "Ghetto house",
+    "Ghettotech",
+    "Glam metal",
+    "Glam rock",
+    "Glitch",
+    "Goregrind",
+    "Gothic metal",
+    "Gothic rock",
+    "Grime",
+    "Grindcore",
+    "Groove metal",
+    "Grunge",
+    "Happy hardcore",
+    "Hard bop",
+    "Hard NRG",
+    "Hard rock",
+    "Hard trance",
+    "Hardbag",
+    "Hardcore punk",
+    "Hardcore/Hard dance",
+    "Hardstep",
+    "Hardstyle",
+    "Heavy metal",
+    "Hi-NRG",
+    "Hip house",
+    "Horror punk",
+    "House",
+    "IDM",
+    "Illbient",
+    "Indie folk",
+    "Indie pop",
+    "Indie rock",
+    "Indietronica",
+    "Industrial folk",
+    "Industrial metal",
+    "Industrial rock",
+    "Industrial",
+    "Intelligent drum and bass",
+    "Italo dance",
+    "Italo disco",
+    "Italo house",
+    "Japanoise",
+    "Jazz blues",
+    "Jazz fusion",
+    "Jazz rap",
+    "Jazz rock",
+    "Jazz-funk",
+    "Jump-Up",
+    "Jumpstyle",
+    "Krautrock",
+    "Laptronica",
+    "Latin house",
+    "Latin jazz",
+    "Liquid funk",
+    "Livetronica",
+    "Lowercase",
+    "Lo-fi",
+    "Madchester",
+    "Mainstream jazz",
+    "Makina",
+    "Math rock",
+    "Mathcore",
+    "Medieval metal",
+    "Melodic death metal",
+    "Metalcore",
+    "Minimal house/Microhouse",
+    "Minimal",
+    "Modal jazz",
+    "Moombahton",
+    "Neo-bop jazz",
+    "Neo-psychedelia",
+    "Neo-swing",
+    "Neofolk",
+    "Neurofunk",
+    "New Beat",
+    "New jack swing",
+    "New prog",
+    "New rave",
+    "New wave",
+    "New-age",
+    "Nintendocore",
+    "No wave",
+    "Noise pop",
+    "Noise rock",
+    "Noise",
+    "Noisegrind",
+    "Nortec",
+    "Novelty ragtime",
+    "Nu jazz",
+    "Nu metal",
+    "Nu skool breaks",
+    "Nu-disco",
+    "Oldschool jungle",
+    "Orchestral jazz",
+    "Orchestral Uplifting",
+    "Paisley Underground",
+    "Pop punk",
+    "Pop rock",
+    "Post-bop",
+    "Post-Britpop",
+    "Post-disco",
+    "Post-grunge",
+    "Post-hardcore",
+    "Post-metal",
+    "Post-punk revival",
+    "Post-punk",
+    "Post-rock",
+    "Power electronics",
+    "Power metal",
+    "Power noise",
+    "Power pop",
+    "Powerviolence",
+    "Progressive breaks",
+    "Progressive drum & bass",
+    "Progressive folk",
+    "Progressive house",
+    "Progressive metal",
+    "Progressive rock",
+    "Progressive techno",
+    "Progressive",
+    "Psybreaks",
+    "Psychedelic folk",
+    "Psychedelic rock",
+    "Psychedelic trance",
+    "Psychobilly",
+    "Psyprog",
+    "Punk jazz",
+    "Punk rock",
+    "Raga rock",
+    "Ragga-jungle",
+    "Raggacore",
+    "Ragtime",
+    "Rap metal",
+    "Rap rock",
+    "Rapcore",
+    "Riot grrrl",
+    "Rock and roll",
+    "Rock in Opposition",
+    "Sadcore",
+    "Sambass",
+    "Screamo",
+    "Shibuya-kei",
+    "Shoegaze",
+    "Ska jazz",
+    "Ska punk",
+    "Skate punk",
+    "Skweee",
+    "Slowcore",
+    "Sludge metal",
+    "Smooth jazz",
+    "Soft rock",
+    "Soul jazz",
+    "Sound art",
+    "Southern rock",
+    "Space disco",
+    "Space house",
+    "Space rock",
+    "Speed garage",
+    "Speed metal",
+    "Speedcore",
+    "Stoner rock",
+    "Straight-ahead jazz",
+    "Street punk",
+    "Stride jazz",
+    "Sufi rock",
+    "Sung poetry",
+    "Suomisaundi",
+    "Surf rock",
+    "Swing house",
+    "Swing",
+    "Symphonic metal",
+    "Synthcore",
+    "Synthpop",
+    "Synthpunk",
+    "Tech house",
+    "Tech trance",
+    "Technical death metal",
+    "Techno-DNB",
+    "Techno-folk",
+    "Techno",
+    "Technopop",
+    "Techstep",
+    "Tecno brega",
+    "Terrorcore",
+    "Third stream",
+    "Thrash metal",
+    "Thrashcore",
+    "Toytown Techno",
+    "Trad jazz",
+    "Traditional doom",
+    "Trance",
+    "Trap",
+    "Tribal house",
+    "Trip hop",
+    "Turbofolk",
+    "Twee Pop",
+    "Uplifting trance",
+    "Vaporwave",
+    "Viking metal",
+    "Vocal house",
+    "Vocal jazz",
+    "Vocal trance",
+    "West Coast jazz",
+    "Western",
+    "Witch House/Drag",
+    "World fusion",
+    "Worldbeat",
+    "Yacht rock",
+    "Yorkshire Bleeps and Bass"
   ]
 }
