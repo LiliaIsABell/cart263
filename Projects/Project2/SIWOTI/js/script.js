@@ -215,7 +215,6 @@ function handleMouseMove() {
   if (speaking === false) {
     responsiveVoice.speak(comments, voice, voiceParameters);
   }
-  console.log('voice end');
 }
 
 function appleAcre() {
