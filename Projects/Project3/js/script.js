@@ -36,9 +36,8 @@ let leftPaddle = {
   w: 40,
   h: 150,
   vy: 0,
+  ty: 0,
   speed: 5,
-  upKey: 87,
-  downKey: 83,
   leftScore: 0
 }
 let rightPaddle = {
@@ -52,6 +51,7 @@ let rightPaddle = {
   downKey: 40,
   rightScore: 0
 }
+
 // Sound
 let beepSFX;
 let scorePoint;
@@ -102,7 +102,8 @@ function draw() {
     // If the game is in play,
     // the paddles can be controled and
     // the ball updates
-    handleInput(leftPaddle);
+    selfMovingPaddle(leftPaddle);
+    // The left paddle moves on its own
     handleInput(rightPaddle);
     updatePaddle(leftPaddle);
     updatePaddle(rightPaddle);
@@ -116,6 +117,8 @@ function draw() {
     if (ballIsOutOfBounds()) {
       // Points are given
       scoreKeeper();
+      // Shows the winner and resets game
+      displayWinner();
       // If it went off either side, reset it
       resetBall();
     }
@@ -148,6 +151,18 @@ function handleInput(paddle) {
     // if neither, stop moving
     paddle.vy = 0;
   }
+}
+
+// Self Moving Paddle
+//
+function selfMovingPaddle(paddle) {
+  // Perlin noise to make it move randomly
+  paddle.vy = map(noise(paddle.ty), 0, 1, -paddle.speed, paddle.speed);
+  paddle.y += paddle.vy;
+  paddle.ty += 0.01;
+  // Make sure it does not leave the screen
+  paddle.y = constrain(paddle.y, 0, windowHeight);
+
 }
 
 // Update Positions
@@ -212,10 +227,39 @@ function scoreKeeper() {
     scorePoint.play();
   }
   // console.log allows to see how much each side scored in Console
-  console.log(leftPaddle.leftScore + "POINT LEFT");
-  console.log(rightPaddle.rightScore + "POINT RIGHT");
+  console.log(turnBlue);
+  console.log(turnYellow);
 }
-// Check Bal lWall Collision
+
+// Display Winner
+//
+function displayWinner() {
+  if (turnYellow === 255) {
+    resetGame()
+    playing = false;
+    console.log("Human wins");
+  } else if (turnBlue === 255) {
+    resetGame()
+    playing = false;
+    console.log("Computer wins");
+  }
+}
+
+// Reset Game
+//
+function resetGame() {
+  turnYellow = 0;
+  turnBlue = 0;
+  setupPaddles();
+  displayStartMessage();
+  displayPaddle(leftPaddle);
+  displayPaddle(rightPaddle);
+  displayBall();
+  rightPaddle.rightScore = 0;
+  leftPaddle.leftScore = 0;
+}
+
+// Check Ball Wall Collision
 //
 function checkBallWallCollision() {
   // Check for collisions with top or bottom...
