@@ -7,9 +7,9 @@ Lilia Isabel Aguirre Lugo
 DON'T FORGET YOUR DESCRIPTION!!!!!!
 
 *********************************************************************/
-
-// The variables for the PONG GAME
-//
+/*****************************************************************************
+ Variables for the PONG GAME
+*****************************************************************************/
 // Game start
 let playing = false;
 
@@ -56,6 +56,13 @@ let rightPaddle = {
 let beepSFX;
 let scorePoint;
 
+/******************************************************************************
+Variables for Interaction
+*******************************************************************************/
+
+let winner;
+let $showWinner;
+
 $(document).ready(setup)
 
 // Preload
@@ -77,7 +84,88 @@ function setup() {
   fill(fgColor);
   setupPaddles();
   resetBall();
+
+  // Span that changes depending
+  // on who wins
+  $showWinner = $('#winner');
+
+  // Introduces Loneputer
+  startMessage();
 }
+
+// Dialogue Boxes
+
+// Start message
+//
+function startMessage() {
+  $("#intro").dialog({
+    modal: true,
+    buttons: {
+      No: optionNo,
+      Yes: optionYes
+    },
+  });
+}
+//  Option No
+//
+function optionNo() {
+  $(this).dialog("close");
+  $("#no-message").dialog({
+    modal: true,
+    buttons: {
+      "Just Kidding": optionYes,
+      "I hate you": optionIHateYou
+    }
+  });
+}
+// Option Yes
+//
+function optionYes() {
+  $(this).dialog("close");
+  $("#yes-instructions").dialog({
+    modal: true,
+    buttons: {
+      Play: function() {
+        playing = true;
+        $(this).dialog("close")
+      }
+    }
+  });
+}
+// Option I Hate You
+//
+function optionIHateYou() {
+  $(this).dialog("close");
+  $("#Ihateyou").dialog({
+    modal: true,
+    buttons: {
+      Ok: function() {
+        $('body').empty();
+        $('body').css("background-color", "black");
+      }
+    }
+  });
+}
+
+// Pong Winner
+//
+function pongWinner() {
+  $(this).dialog("close");
+  $("#winner-of-pong").dialog({
+    modal: true,
+    buttons: {
+      Sure: optionYes,
+      "Maybe some other time": function() {
+        $(this).dialog("close");
+      }
+    }
+  });
+}
+
+
+/*****************************************************************************
+PONG game
+*****************************************************************************/
 
 // Setup Paddles
 //
@@ -123,9 +211,6 @@ function draw() {
       resetBall();
     }
 
-  } else {
-    // message to start the game
-    displayStartMessage();
   }
 
   // Display the paddles and ball
@@ -234,27 +319,39 @@ function scoreKeeper() {
 // Display Winner
 //
 function displayWinner() {
+  // If the player wins
   if (turnYellow === 255) {
-    resetGame()
+    // The winner is displayed
+    winner = "You";
+    $showWinner.text(winner);
+    // Option to reset game
+    pongWinner();
+    resetGame();
     playing = false;
-    console.log("Human wins");
+    // If the computer wins
   } else if (turnBlue === 255) {
+    // The winner is displayed
+    winner = "I";
+    $showWinner.text(winner);
+    // Option to reset game
+    pongWinner();
     resetGame()
     playing = false;
-    console.log("Computer wins");
   }
 }
 
 // Reset Game
 //
 function resetGame() {
+  // Color resets
   turnYellow = 0;
   turnBlue = 0;
+  // Set up game
   setupPaddles();
-  displayStartMessage();
   displayPaddle(leftPaddle);
   displayPaddle(rightPaddle);
   displayBall();
+  // Reset scores 
   rightPaddle.rightScore = 0;
   leftPaddle.leftScore = 0;
 }
@@ -323,20 +420,4 @@ function resetBall() {
   // ball.vy has a random velocity
   // to make the ball start in a more unpredictable way.
   ball.vy = random(ball.speed, 10);
-}
-
-// Display Start Message
-//
-function displayStartMessage() {
-  push();
-  textAlign(CENTER, CENTER);
-  textSize(32);
-  text("CLICK TO START", width / 2, height / 2);
-  pop();
-}
-
-// Mouse Pressed
-//
-function mousePressed() {
-  playing = true;
 }
