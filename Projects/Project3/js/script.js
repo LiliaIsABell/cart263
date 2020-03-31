@@ -59,9 +59,21 @@ let scorePoint;
 /******************************************************************************
 Variables for Interaction
 *******************************************************************************/
-
+// Keeping track of the winner
 let winner;
 let $showWinner;
+
+// Trying to exit the game
+let $askingToStay;
+let pleads = [
+  "Please don't leave.",
+  "Can't you stay for a little bit?",
+  "Do you have to leave?",
+  "Please, another round!",
+  "Another round, pretty pleeease!",
+  "I don't want to be alone.",
+  "I'm so lonely."
+];
 
 $(document).ready(setup)
 
@@ -88,6 +100,10 @@ function setup() {
   // Span that changes depending
   // on who wins
   $showWinner = $('#winner');
+
+  // Span that changes depending
+  // on the random plead chosen
+  $askingToStay = $('#stay');
 
   // Introduces Loneputer
   startMessage();
@@ -171,8 +187,15 @@ function pongWinner() {
 function stay() {
   // Loneputer will continuously ask for
   // the user to stay
+  handleRandomPleading();
   $("#mouseExit").dialog({
     modal: true,
+    buttons:{
+      "okay, let's play": optionYes,
+      "Sorry, I must go": function(){
+        $(this).dialog("close");
+      }
+    }
   })
 }
 
@@ -180,11 +203,23 @@ function stay() {
 function maybeNextTime() {
   $(this).dialog("close");
   // When the mouse tries to exit the screen,
-  // Loneputer will ask the user to stay  
+  // Loneputer will ask the user to stay
   $(document).on('mouseleave', stay);
 
 }
 
+
+  // Non dialog box
+
+// Handle Random Pleading
+//
+  function handleRandomPleading(){
+    let pleading;
+    // Random plead is chosen from the array
+    pleading = pleads[Math.floor(Math.random()*pleads.length)];
+    // Added to the span
+    $askingToStay.text(pleading);
+  }
 
 
 /*****************************************************************************
