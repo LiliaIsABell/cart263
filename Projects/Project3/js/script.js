@@ -97,6 +97,18 @@ function setup() {
   setupPaddles();
   resetBall();
 
+  let wantToPlay = localStorage.getItem("wantToPlay");
+  if (wantToPlay === null){
+    // Introduces Loneputer
+    startMessage();
+  }
+  else if (wantToPlay === "Yes"){
+    optionYes();
+  }
+  else if (wantToPlay === "No"){
+    optionNo();
+  }
+
   // Span that changes depending
   // on who wins
   $showWinner = $('#winner');
@@ -105,8 +117,18 @@ function setup() {
   // on the random plead chosen
   $askingToStay = $('#stay');
 
-  // Introduces Loneputer
-  startMessage();
+
+}
+
+function setChoice(){
+
+let choice = $(this);
+
+ let wantToPlay = {
+   decision:choice
+ }
+localStorage.setItem("wantToPlay", JSON.stringify(wantToPlay));
+localStorage.clear();
 }
 
 // Dialogue Boxes
@@ -126,6 +148,7 @@ function startMessage() {
 //
 function optionNo() {
   $(this).dialog("close");
+
   $("#no-message").dialog({
     modal: true,
     buttons: {
@@ -137,6 +160,7 @@ function optionNo() {
 // Option Yes
 //
 function optionYes() {
+  
   // If user chooses to play
   $(this).dialog("close");
   $("#yes-instructions").dialog({
