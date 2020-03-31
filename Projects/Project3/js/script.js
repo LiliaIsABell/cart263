@@ -97,16 +97,27 @@ function setup() {
   setupPaddles();
   resetBall();
 
-  let wantToPlay = localStorage.getItem("wantToPlay");
+  // Create local storage that will remeber choices
+  let wantToPlay = JSON.parse(localStorage.getItem("wantToPlay"));
+  // *To reset*
+  // localStorage.clear();
+  // Starts null
   if (wantToPlay === null){
-    // Introduces Loneputer
+    // the start message is presented
     startMessage();
   }
-  else if (wantToPlay === "Yes"){
-    optionYes();
+  // If "Yes" is chosen, then the user can keep
+  // interacting with the program
+  else if (wantToPlay.decision === "Yes"){
+    startMessage();
   }
-  else if (wantToPlay === "No"){
-    optionNo();
+  // If "I hate you" is chosen, then the user can
+  // never interact with the program ever again
+  // for being rude
+  else if (wantToPlay.decision === "No"){
+    // the body stays black and empty
+    $('body').empty();
+    $('body').css("background-color", "black");
   }
 
   // Span that changes depending
@@ -120,15 +131,16 @@ function setup() {
 
 }
 
-function setChoice(){
-
-let choice = $(this);
-
+// Save Choice
+//
+function saveChoice(choice){
+// Here is where the choice
+// is remembered
  let wantToPlay = {
    decision:choice
  }
+// Decision stored
 localStorage.setItem("wantToPlay", JSON.stringify(wantToPlay));
-localStorage.clear();
 }
 
 // Dialogue Boxes
@@ -148,7 +160,6 @@ function startMessage() {
 //
 function optionNo() {
   $(this).dialog("close");
-
   $("#no-message").dialog({
     modal: true,
     buttons: {
@@ -160,9 +171,9 @@ function optionNo() {
 // Option Yes
 //
 function optionYes() {
-  
   // If user chooses to play
   $(this).dialog("close");
+  setChoice("Yes")
   $("#yes-instructions").dialog({
     modal: true,
     buttons: {
@@ -180,6 +191,7 @@ function optionIHateYou() {
   // If the user rudely refuses
   // to play
   $(this).dialog("close");
+  setChoice("No");
   $("#Ihateyou").dialog({
     modal: true,
     buttons: {
