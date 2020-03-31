@@ -22,3 +22,7 @@ body {
 #winner-of-pong {
   display: none;
 }
+
+#mouseExit {
+  display: none;
+}

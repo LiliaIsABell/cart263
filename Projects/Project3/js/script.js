@@ -155,12 +155,23 @@ function pongWinner() {
     modal: true,
     buttons: {
       Sure: optionYes,
-      "Maybe some other time": function() {
-        $(this).dialog("close");
-      }
+      "Maybe some other time": maybeNextTime
     }
   });
 }
+
+function stay(){
+  $("#mouseExit").dialog({
+    modal: true,
+  })
+}
+
+function maybeNextTime(){
+  $(this).dialog("close");
+  $(window).on('mouseleave', stay);
+
+}
+
 
 
 /*****************************************************************************
@@ -351,7 +362,7 @@ function resetGame() {
   displayPaddle(leftPaddle);
   displayPaddle(rightPaddle);
   displayBall();
-  // Reset scores 
+  // Reset scores
   rightPaddle.rightScore = 0;
   leftPaddle.leftScore = 0;
 }
