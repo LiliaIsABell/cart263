@@ -121,11 +121,13 @@ function optionNo() {
 // Option Yes
 //
 function optionYes() {
+  // If user chooses to play
   $(this).dialog("close");
   $("#yes-instructions").dialog({
     modal: true,
     buttons: {
       Play: function() {
+        // the game will start
         playing = true;
         $(this).dialog("close")
       }
@@ -135,11 +137,15 @@ function optionYes() {
 // Option I Hate You
 //
 function optionIHateYou() {
+  // If the user rudely refuses
+  // to play
   $(this).dialog("close");
   $("#Ihateyou").dialog({
     modal: true,
     buttons: {
       Ok: function() {
+        // the body will empty and
+        // turn black
         $('body').empty();
         $('body').css("background-color", "black");
       }
@@ -160,15 +166,22 @@ function pongWinner() {
   });
 }
 
-function stay(){
+// Stay
+//
+function stay() {
+  // Loneputer will continuously ask for
+  // the user to stay
   $("#mouseExit").dialog({
     modal: true,
   })
 }
 
-function maybeNextTime(){
+// Maybe Next Time
+function maybeNextTime() {
   $(this).dialog("close");
-  $(window).on('mouseleave', stay);
+  // When the mouse tries to exit the screen,
+  // Loneputer will ask the user to stay  
+  $(document).on('mouseleave', stay);
 
 }
 
