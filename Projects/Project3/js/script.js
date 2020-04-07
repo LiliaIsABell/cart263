@@ -75,6 +75,15 @@ let pleads = [
   "I'm so lonely."
 ];
 
+// Loneputer shows excitement
+let $criesOfExcitement;
+let exclamations = [
+  "YAY!",
+  "Awesome!",
+  "Great!",
+  "Yes!!"
+]
+
 $(document).ready(setup)
 
 // Preload
@@ -97,19 +106,32 @@ function setup() {
   setupPaddles();
   resetBall();
 
+  // Span that changes depending
+  // on who wins
+  $showWinner = $('#winner');
+
+  // Span that changes depending
+  // on the random plead chosen
+  $askingToStay = $('#stay');
+
+  // Span that displays different
+  // exclamations after the
+  // first "Yes" interaction
+  $criesOfExcitement = $('#exclamation');
+
   // Create local storage that will remeber choices
   let wantToPlay = JSON.parse(localStorage.getItem("wantToPlay"));
   // *To reset*
-  localStorage.clear();
+  // localStorage.clear();
   // Starts null
   if (wantToPlay === null) {
     // the start message is presented
     startMessage();
   }
-  // If "Yes" is chosen, then the user can keep
-  // interacting with the program
+  // If "Yes" is chosen, the the program
+  // will remember the user
   else if (wantToPlay.decision === "Yes") {
-    startMessage();
+    rememberUser();
   }
   // If "I hate you" is chosen, then the user can
   // never interact with the program ever again
@@ -119,20 +141,6 @@ function setup() {
     $('body').empty();
     $('body').css("background-color", "black");
   }
-  // Once the user interacts with the program,
-  // it will remember that
-  else if (wantToPlay.decision === "rememberUser") {
-    rememberUser();
-  }
-
-  // Span that changes depending
-  // on who wins
-  $showWinner = $('#winner');
-
-  // Span that changes depending
-  // on the random plead chosen
-  $askingToStay = $('#stay');
-
 
 }
 
@@ -176,12 +184,17 @@ function optionNo() {
 // Option Yes
 //
 function optionYes() {
-  // If user chooses to play
+  // If user chooses to play,
   $(this).dialog("close");
-  // the choice will be remebered
-  setChoice("Yes")
-  // the interactin is remembered
-  setChoice("rememberUser");
+  // will remeber if instructions
+  // have already been seen
+  let wantToPlay = JSON.parse(localStorage.getItem("wantToPlay"));
+  if (wantToPlay !== null) {
+    $('#yes-instructions').text(handleCriesOfExcitement());
+  }
+  // the choice will be remembered
+  setChoice("Yes");
+  // Dialog box
   $("#yes-instructions").dialog({
     modal: true,
     buttons: {
@@ -273,10 +286,18 @@ function rememberUser() {
 //
 function handleRandomPleading() {
   let pleading;
-  // Random plead is chosen from the array
+  // Random plea is chosen from the array
   pleading = pleads[Math.floor(Math.random() * pleads.length)];
   // Added to the span
   $askingToStay.text(pleading);
+}
+
+function handleCriesOfExcitement() {
+  let excitement;
+  // Random exclamation is chosen from the array
+  excitement = exclamations[Math.floor(Math.random() * exclamations.length)];
+  // returns it to function
+  return excitement;
 }
 
 
