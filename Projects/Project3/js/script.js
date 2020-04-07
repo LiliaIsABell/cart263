@@ -100,24 +100,29 @@ function setup() {
   // Create local storage that will remeber choices
   let wantToPlay = JSON.parse(localStorage.getItem("wantToPlay"));
   // *To reset*
-  // localStorage.clear();
+  localStorage.clear();
   // Starts null
-  if (wantToPlay === null){
+  if (wantToPlay === null) {
     // the start message is presented
     startMessage();
   }
   // If "Yes" is chosen, then the user can keep
   // interacting with the program
-  else if (wantToPlay.decision === "Yes"){
+  else if (wantToPlay.decision === "Yes") {
     startMessage();
   }
   // If "I hate you" is chosen, then the user can
   // never interact with the program ever again
   // for being rude
-  else if (wantToPlay.decision === "No"){
+  else if (wantToPlay.decision === "No") {
     // the body stays black and empty
     $('body').empty();
     $('body').css("background-color", "black");
+  }
+  // Once the user interacts with the program,
+  // it will remember that
+  else if (wantToPlay.decision === "rememberUser") {
+    rememberUser();
   }
 
   // Span that changes depending
@@ -133,14 +138,14 @@ function setup() {
 
 // Save Choice
 //
-function saveChoice(choice){
-// Here is where the choice
-// is remembered
- let wantToPlay = {
-   decision:choice
- }
-// Decision stored
-localStorage.setItem("wantToPlay", JSON.stringify(wantToPlay));
+function setChoice(choice) {
+  // Here is where the choice
+  // is remembered
+  let wantToPlay = {
+    decision: choice
+  }
+  // Decision stored
+  localStorage.setItem("wantToPlay", JSON.stringify(wantToPlay));
 }
 
 // Dialogue Boxes
@@ -173,7 +178,10 @@ function optionNo() {
 function optionYes() {
   // If user chooses to play
   $(this).dialog("close");
+  // the choice will be remebered
   setChoice("Yes")
+  // the interactin is remembered
+  setChoice("rememberUser");
   $("#yes-instructions").dialog({
     modal: true,
     buttons: {
@@ -226,9 +234,9 @@ function stay() {
   handleRandomPleading();
   $("#mouseExit").dialog({
     modal: true,
-    buttons:{
+    buttons: {
       "okay, let's play": optionYes,
-      "Sorry, I must go": function(){
+      "Sorry, I must go": function() {
         $(this).dialog("close");
       }
     }
@@ -236,6 +244,7 @@ function stay() {
 }
 
 // Maybe Next Time
+//
 function maybeNextTime() {
   $(this).dialog("close");
   // When the mouse tries to exit the screen,
@@ -244,18 +253,31 @@ function maybeNextTime() {
 
 }
 
+// Remember User
+//
+function rememberUser() {
+  // Program remembers the user
+  // asks to play
+  $("#rememberUser").dialog({
+    modal: true,
+    buttons: {
+      Okay: optionYes,
+    }
+  })
+}
 
-  // Non dialog box
+
+// Non dialog box
 
 // Handle Random Pleading
 //
-  function handleRandomPleading(){
-    let pleading;
-    // Random plead is chosen from the array
-    pleading = pleads[Math.floor(Math.random()*pleads.length)];
-    // Added to the span
-    $askingToStay.text(pleading);
-  }
+function handleRandomPleading() {
+  let pleading;
+  // Random plead is chosen from the array
+  pleading = pleads[Math.floor(Math.random() * pleads.length)];
+  // Added to the span
+  $askingToStay.text(pleading);
+}
 
 
 /*****************************************************************************

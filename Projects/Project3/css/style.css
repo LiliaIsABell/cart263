@@ -26,3 +26,7 @@ body {
 #mouseExit {
   display: none;
 }
+
+#rememberUser {
+  display: none;
+}
