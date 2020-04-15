@@ -4,7 +4,12 @@
 This Time it's Personal
 Lilia Isabel Aguirre Lugo
 
-DON'T FORGET YOUR DESCRIPTION!!!!!!
+This is an interactive program in which the user interacts with a
+lonely computer named Loneputer.
+- Dialog boxes are used to talk to Loneputer.
+- The user can play pong with Loneputer.
+- Using local storage, the decisions made can be remebered.
+- When the user tries to exit, Loneputer will plea to stay.
 
 *********************************************************************/
 /*****************************************************************************
