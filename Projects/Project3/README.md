@@ -1,9 +1,14 @@
 Lilia Isabel Aguirre Lugo
+
 Pippin Barr
+
 CART 263
+
 April 19 2020
 
+
 Artist Statement
+
 
 For this final project, I decided to make an interactive program in
 which the user interacts with a very lonely computer named Loneputer.
